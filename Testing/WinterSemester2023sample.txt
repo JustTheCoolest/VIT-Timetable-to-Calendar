@@ -1,0 +1,343 @@
+Sl.No	Class Group	Course	L T P J C	Category	Course Option	Class Nbr	Slot -
+Venue	Faculty Details	Registered / Updated Date & Time	Attendance Date - Type	Status & Ref No
+1
+
+General (Semester)
+
+BCHY102N - Environmental Sciences
+
+( Online Course )
+
+0 0 0 0 2.0
+
+Non-graded Core Requirement
+Regular
+
+CH2022232300816
+
+NIL -
+
+
+NIL
+
+ILAIYARAJA PERUMAL -
+
+
+SAS
+
+21-Jan-2023 12:25
+
+22-Jan-2023
+- Manual
+
+Registered and Approved
+2
+
+General (Semester)
+
+BCSE102L - Structured and Object-Oriented Programming
+
+( Theory Only )
+
+2 0 0 0 2.0
+
+Foundation Core - Basic Engineering Sciences
+Regular
+
+CH2022232300536
+
+G1 -
+
+
+AB1-402
+
+ILAVENDHAN A -
+
+
+SCOPE
+
+21-Jan-2023 11:39
+
+22-Jan-2023
+- Manual
+
+Registered and Approved
+3
+
+General (Semester)
+
+BCSE102P - Structured and Object-Oriented Programming Lab
+
+( Lab Only )
+
+0 0 4 0 2.0
+
+Foundation Core - Basic Engineering Sciences
+Regular
+
+CH2022232300674
+
+L29+L30+L37+L38 -
+
+
+AB1-404B
+
+ILAVENDHAN A -
+
+
+SCOPE
+
+21-Jan-2023 11:39
+
+22-Jan-2023
+- Manual
+
+Registered and Approved
+4
+
+General (Semester)
+
+BECE102L - Digital Systems Design
+
+( Theory Only )
+
+3 0 0 0 3.0
+
+Discipline-linked Engineering Sciences
+Regular
+
+CH2022232300133
+
+D1+TD1 -
+
+
+AB1-411
+
+J DIVYA -
+
+
+SENSE
+
+21-Jan-2023 12:14
+
+22-Jan-2023
+- Manual
+
+Registered and Approved
+5
+
+General (Semester)
+
+BECE102P - Digital Systems Design Lab
+
+( Lab Only )
+
+0 0 2 0 1.0
+
+Discipline-linked Engineering Sciences
+Regular
+
+CH2022232300183
+
+L33+L34 -
+
+
+AB1-207
+
+J DIVYA -
+
+
+SENSE
+
+21-Jan-2023 12:14
+
+22-Jan-2023
+- Manual
+
+Registered and Approved
+6
+
+General (Semester)
+
+BENG101L - Technical English Communication
+
+( Theory Only )
+
+2 0 0 0 2.0
+
+Foundation Core - Humanities, Social Sciences and Management
+Regular
+
+CH2022232300363
+
+C1 -
+
+
+AB1-411
+
+BHUVANESWARI R -
+
+
+SSL
+
+21-Jan-2023 12:23
+
+22-Jan-2023
+- Manual
+
+Registered and Approved
+7
+
+General (Semester)
+
+BENG101P - Technical English Communication Lab
+
+( Lab Only )
+
+0 0 2 0 1.0
+
+Foundation Core - Humanities, Social Sciences and Management
+Regular
+
+CH2022232300364
+
+L31+L32 -
+
+
+AB1-405
+
+BHUVANESWARI R -
+
+
+SSL
+
+21-Jan-2023 12:23
+
+22-Jan-2023
+- Manual
+
+Registered and Approved
+8
+
+General (Semester)
+
+BMAT102L - Differential Equations and Transforms
+
+( Theory Only )
+
+3 1 0 0 4.0
+
+Foundation Core - Basic Sciences and Mathematics
+Regular
+
+CH2022232300430
+
+A1+TA1+TAA1 -
+
+
+AB1-402
+
+HANNAH GRACE G -
+
+
+SAS
+
+21-Jan-2023 11:52
+
+22-Jan-2023
+- Manual
+
+Registered and Approved
+9
+
+General (Semester)
+
+BPHY101L - Engineering Physics
+
+( Theory Only )
+
+3 0 0 0 3.0
+
+Foundation Core - Basic Sciences and Mathematics
+Regular
+
+CH2022232300020
+
+E1+TE1 -
+
+
+AB1-402
+
+VINITHA G -
+
+
+SAS
+
+21-Jan-2023 12:07
+
+22-Jan-2023
+- Manual
+
+Registered and Approved
+10
+
+General (Semester)
+
+BPHY101P - Engineering Physics Lab
+
+( Lab Only )
+
+0 0 2 0 1.0
+
+Foundation Core - Basic Sciences and Mathematics
+Regular
+
+CH2022232300070
+
+L55+L56 -
+
+
+AB1-202
+
+VINITHA G -
+
+
+SAS
+
+21-Jan-2023 12:07
+
+22-Jan-2023
+- Manual
+
+Registered and Approved
+11
+
+General (Semester)
+
+BSTS101P - Quantitative Skills Practice I
+
+( Soft Skill )
+
+0 0 3 0 1.5
+
+Foundation Core - Humanities, Social Sciences and Management
+Regular
+
+CH2022232300689
+
+F1+TF1 -
+
+
+AB1-401
+
+ETHNUS (APT) -
+
+
+ACAD
+
+21-Jan-2023 11:36
+
+22-Jan-2023
+- Manual
+
+Registered and Approved
