@@ -24,7 +24,26 @@ def get_courses(text: str) -> dict[str, dict]:
     return courses
 
 
-def generate_calendar(courses: list[dict]) -> icalendar.cal.Calendar:
+def get_slot_times(start_times: list[str], end_times: list[str]) -> list[tuple[list[int]]]:
+    """
+    Slots times from first two lines of timetable text becomes,
+     list(tuple(start_time, end_time), ...) where,
+     time = list(hours, minutes)
+    """
+    for times in (start_times, end_times):
+        for index, time in enumerate(times):
+            if time == "Lunch":
+                continue
+            time = time.split(":")
+            time = [int(component) for component in time]
+            times[index] = time
+    slot_times = list(zip(start_times, end_times))
+    return slot_times
+
+
+def generate_calendar(courses: list[dict], timetable_text: str) -> icalendar.cal.Calendar:
     calendar = icalendar.Calendar()
     calendar['prodid'] = '-// Andhavarapu Balu // github.com/JustTheCoolest/VIT-Chennai-Timetable-to-Calendar //EN'
     calendar['x-wr-timezone'] = 'Asia/Kolkata'
+    rows = map(str.split, timetable_text.splitlines())
+    slot_timings = get_slot_times(rows[0][1:], rows[1])
