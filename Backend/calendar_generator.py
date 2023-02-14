@@ -1,4 +1,5 @@
 import icalendar
+import datetime
 
 
 def get_courses(text: str) -> dict[str, dict]:
@@ -41,9 +42,33 @@ def get_slot_times(start_times: list[str], end_times: list[str]) -> list[tuple[l
     return slot_times
 
 
-def generate_calendar(courses: list[dict], timetable_text: str) -> icalendar.cal.Calendar:
+def add_events(
+        day_rows: list[str],
+        slot_timings: list[tuple[list[int]]],
+        courses: dict[str, dict],
+        semester_dates: list[datetime.datetime]
+) -> None:
+    """Goes through the list of slots in the days and adds any classes found to the calendar as events"""
+    for day_index, day_row in enumerate(day_rows):
+        for slot_index, slot_cell in enumerate(day_row):
+            if "-" in slot_cell:
+                slot_cell = slot_cell.split()
+                slot_course = slot_cell[1]
+                slot_venue = "-".join(slot_cell[3:5])
+                event = icalendar.Event()
+                event['summary'] = courses[slot_course]['title']
+                event['location'] = slot_venue
+                # flag - Unfinished function
+
+
+def generate_calendar(
+        courses: dict[str, dict],
+        timetable_text: str,
+        semester_dates: list[datetime.datetime]
+) -> icalendar.cal.Calendar:
     calendar = icalendar.Calendar()
     calendar['prodid'] = '-// Andhavarapu Balu // github.com/JustTheCoolest/VIT-Chennai-Timetable-to-Calendar //EN'
     calendar['x-wr-timezone'] = 'Asia/Kolkata'
     rows = map(str.split, timetable_text.splitlines())
-    slot_timings = get_slot_times(rows[0][2:], rows[1][1:])
+    theory_slot_timings = get_slot_times(rows[0][2:], rows[1][1:])
+    lab_slot_timings = get_slot_times(rows[2][2:], rows[3][1:])
