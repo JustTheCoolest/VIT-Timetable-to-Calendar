@@ -1,0 +1,1071 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-// Andhavarapu Balu // github.com/JustTheCoolest/VIT-Chennai-Timet
+ able-to-Calendar //EN
+X-WR-TIMEZONE:Asia/Kolkata
+BEGIN:VEVENT
+SUMMARY:Differential Equations and Transforms
+DTSTART:2023-02-20 08:00:00
+DTEND:2023-02-20 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BMAT102L\ntitle = Differential Equations and Tra
+ nsforms\nLTPJC = (3.0\, 1.0\, 0.0\, 0.0\, 4.0)\nclass_code = CH20222323004
+ 30\nslot = A1+TA1+TAA1\nvenue = AB1-402\nprofessor = HANNAH GRACE G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Differential Equations and Transforms
+DTSTART:2023-04-03 08:00:00
+DTEND:2023-04-03 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BMAT102L\ntitle = Differential Equations and Tra
+ nsforms\nLTPJC = (3.0\, 1.0\, 0.0\, 0.0\, 4.0)\nclass_code = CH20222323004
+ 30\nslot = A1+TA1+TAA1\nvenue = AB1-402\nprofessor = HANNAH GRACE G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Differential Equations and Transforms
+DTSTART:2023-05-15 08:00:00
+DTEND:2023-05-15 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BMAT102L\ntitle = Differential Equations and Tra
+ nsforms\nLTPJC = (3.0\, 1.0\, 0.0\, 0.0\, 4.0)\nclass_code = CH20222323004
+ 30\nslot = A1+TA1+TAA1\nvenue = AB1-402\nprofessor = HANNAH GRACE G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Quantitative Skills Practice I
+DTSTART:2023-02-20 08:00:00
+DTEND:2023-02-20 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BSTS101P\ntitle = Quantitative Skills Practice I
+ \nLTPJC = (0.0\, 0.0\, 3.0\, 0.0\, 1.5)\nclass_code = CH2022232300689\nslo
+ t = F1+TF1\nvenue = AB1-401\nprofessor = ETHNUS (APT)
+LOCATION:AB1-401
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Quantitative Skills Practice I
+DTSTART:2023-04-03 08:00:00
+DTEND:2023-04-03 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BSTS101P\ntitle = Quantitative Skills Practice I
+ \nLTPJC = (0.0\, 0.0\, 3.0\, 0.0\, 1.5)\nclass_code = CH2022232300689\nslo
+ t = F1+TF1\nvenue = AB1-401\nprofessor = ETHNUS (APT)
+LOCATION:AB1-401
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Quantitative Skills Practice I
+DTSTART:2023-05-15 08:00:00
+DTEND:2023-05-15 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BSTS101P\ntitle = Quantitative Skills Practice I
+ \nLTPJC = (0.0\, 0.0\, 3.0\, 0.0\, 1.5)\nclass_code = CH2022232300689\nslo
+ t = F1+TF1\nvenue = AB1-401\nprofessor = ETHNUS (APT)
+LOCATION:AB1-401
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design
+DTSTART:2023-02-20 08:00:00
+DTEND:2023-02-20 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BECE102L\ntitle = Digital Systems Design\nLTPJC 
+ = (3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300133\nslot = D1+T
+ D1\nvenue = AB1-411\nprofessor = J DIVYA
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design
+DTSTART:2023-04-03 08:00:00
+DTEND:2023-04-03 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BECE102L\ntitle = Digital Systems Design\nLTPJC 
+ = (3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300133\nslot = D1+T
+ D1\nvenue = AB1-411\nprofessor = J DIVYA
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design
+DTSTART:2023-05-15 08:00:00
+DTEND:2023-05-15 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BECE102L\ntitle = Digital Systems Design\nLTPJC 
+ = (3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300133\nslot = D1+T
+ D1\nvenue = AB1-411\nprofessor = J DIVYA
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming
+DTSTART:2023-02-21 08:55:00
+DTEND:2023-02-21 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BCSE102L\ntitle = Structured and Object-Oriented
+  Programming\nLTPJC = (2.0\, 0.0\, 0.0\, 0.0\, 2.0)\nclass_code = CH202223
+ 2300536\nslot = G1\nvenue = AB1-402\nprofessor = ILAVENDHAN A
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming
+DTSTART:2023-04-04 08:55:00
+DTEND:2023-04-04 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BCSE102L\ntitle = Structured and Object-Oriented
+  Programming\nLTPJC = (2.0\, 0.0\, 0.0\, 0.0\, 2.0)\nclass_code = CH202223
+ 2300536\nslot = G1\nvenue = AB1-402\nprofessor = ILAVENDHAN A
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming
+DTSTART:2023-05-16 08:55:00
+DTEND:2023-05-16 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BCSE102L\ntitle = Structured and Object-Oriented
+  Programming\nLTPJC = (2.0\, 0.0\, 0.0\, 0.0\, 2.0)\nclass_code = CH202223
+ 2300536\nslot = G1\nvenue = AB1-402\nprofessor = ILAVENDHAN A
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics
+DTSTART:2023-02-21 08:55:00
+DTEND:2023-02-21 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BPHY101L\ntitle = Engineering Physics\nLTPJC = (
+ 3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300020\nslot = E1+TE1\
+ nvenue = AB1-402\nprofessor = VINITHA G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics
+DTSTART:2023-04-04 08:55:00
+DTEND:2023-04-04 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BPHY101L\ntitle = Engineering Physics\nLTPJC = (
+ 3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300020\nslot = E1+TE1\
+ nvenue = AB1-402\nprofessor = VINITHA G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics
+DTSTART:2023-05-16 08:55:00
+DTEND:2023-05-16 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BPHY101L\ntitle = Engineering Physics\nLTPJC = (
+ 3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300020\nslot = E1+TE1\
+ nvenue = AB1-402\nprofessor = VINITHA G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Differential Equations and Transforms
+DTSTART:2023-02-21 08:55:00
+DTEND:2023-02-21 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BMAT102L\ntitle = Differential Equations and Tra
+ nsforms\nLTPJC = (3.0\, 1.0\, 0.0\, 0.0\, 4.0)\nclass_code = CH20222323004
+ 30\nslot = A1+TA1+TAA1\nvenue = AB1-402\nprofessor = HANNAH GRACE G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Differential Equations and Transforms
+DTSTART:2023-04-04 08:55:00
+DTEND:2023-04-04 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BMAT102L\ntitle = Differential Equations and Tra
+ nsforms\nLTPJC = (3.0\, 1.0\, 0.0\, 0.0\, 4.0)\nclass_code = CH20222323004
+ 30\nslot = A1+TA1+TAA1\nvenue = AB1-402\nprofessor = HANNAH GRACE G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Differential Equations and Transforms
+DTSTART:2023-05-16 08:55:00
+DTEND:2023-05-16 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BMAT102L\ntitle = Differential Equations and Tra
+ nsforms\nLTPJC = (3.0\, 1.0\, 0.0\, 0.0\, 4.0)\nclass_code = CH20222323004
+ 30\nslot = A1+TA1+TAA1\nvenue = AB1-402\nprofessor = HANNAH GRACE G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Technical English Communication
+DTSTART:2023-02-15 09:50:00
+DTEND:2023-02-15 10:40:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BENG101L\ntitle = Technical English Communicatio
+ n\nLTPJC = (2.0\, 0.0\, 0.0\, 0.0\, 2.0)\nclass_code = CH2022232300363\nsl
+ ot = C1\nvenue = AB1-411\nprofessor = BHUVANESWARI R
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Technical English Communication
+DTSTART:2023-04-05 09:50:00
+DTEND:2023-04-05 10:40:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BENG101L\ntitle = Technical English Communicatio
+ n\nLTPJC = (2.0\, 0.0\, 0.0\, 0.0\, 2.0)\nclass_code = CH2022232300363\nsl
+ ot = C1\nvenue = AB1-411\nprofessor = BHUVANESWARI R
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Technical English Communication
+DTSTART:2023-05-17 09:50:00
+DTEND:2023-05-17 10:40:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BENG101L\ntitle = Technical English Communicatio
+ n\nLTPJC = (2.0\, 0.0\, 0.0\, 0.0\, 2.0)\nclass_code = CH2022232300363\nsl
+ ot = C1\nvenue = AB1-411\nprofessor = BHUVANESWARI R
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Differential Equations and Transforms
+DTSTART:2023-02-15 09:50:00
+DTEND:2023-02-15 10:40:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BMAT102L\ntitle = Differential Equations and Tra
+ nsforms\nLTPJC = (3.0\, 1.0\, 0.0\, 0.0\, 4.0)\nclass_code = CH20222323004
+ 30\nslot = A1+TA1+TAA1\nvenue = AB1-402\nprofessor = HANNAH GRACE G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Differential Equations and Transforms
+DTSTART:2023-04-05 09:50:00
+DTEND:2023-04-05 10:40:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BMAT102L\ntitle = Differential Equations and Tra
+ nsforms\nLTPJC = (3.0\, 1.0\, 0.0\, 0.0\, 4.0)\nclass_code = CH20222323004
+ 30\nslot = A1+TA1+TAA1\nvenue = AB1-402\nprofessor = HANNAH GRACE G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Differential Equations and Transforms
+DTSTART:2023-05-17 09:50:00
+DTEND:2023-05-17 10:40:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BMAT102L\ntitle = Differential Equations and Tra
+ nsforms\nLTPJC = (3.0\, 1.0\, 0.0\, 0.0\, 4.0)\nclass_code = CH20222323004
+ 30\nslot = A1+TA1+TAA1\nvenue = AB1-402\nprofessor = HANNAH GRACE G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Quantitative Skills Practice I
+DTSTART:2023-02-15 09:50:00
+DTEND:2023-02-15 10:40:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BSTS101P\ntitle = Quantitative Skills Practice I
+ \nLTPJC = (0.0\, 0.0\, 3.0\, 0.0\, 1.5)\nclass_code = CH2022232300689\nslo
+ t = F1+TF1\nvenue = AB1-401\nprofessor = ETHNUS (APT)
+LOCATION:AB1-401
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Quantitative Skills Practice I
+DTSTART:2023-04-05 09:50:00
+DTEND:2023-04-05 10:40:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BSTS101P\ntitle = Quantitative Skills Practice I
+ \nLTPJC = (0.0\, 0.0\, 3.0\, 0.0\, 1.5)\nclass_code = CH2022232300689\nslo
+ t = F1+TF1\nvenue = AB1-401\nprofessor = ETHNUS (APT)
+LOCATION:AB1-401
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Quantitative Skills Practice I
+DTSTART:2023-05-17 09:50:00
+DTEND:2023-05-17 10:40:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BSTS101P\ntitle = Quantitative Skills Practice I
+ \nLTPJC = (0.0\, 0.0\, 3.0\, 0.0\, 1.5)\nclass_code = CH2022232300689\nslo
+ t = F1+TF1\nvenue = AB1-401\nprofessor = ETHNUS (APT)
+LOCATION:AB1-401
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design
+DTSTART:2023-02-15 09:50:00
+DTEND:2023-02-15 10:40:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BECE102L\ntitle = Digital Systems Design\nLTPJC 
+ = (3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300133\nslot = D1+T
+ D1\nvenue = AB1-411\nprofessor = J DIVYA
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design
+DTSTART:2023-04-05 09:50:00
+DTEND:2023-04-05 10:40:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BECE102L\ntitle = Digital Systems Design\nLTPJC 
+ = (3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300133\nslot = D1+T
+ D1\nvenue = AB1-411\nprofessor = J DIVYA
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design
+DTSTART:2023-05-17 09:50:00
+DTEND:2023-05-17 10:40:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BECE102L\ntitle = Digital Systems Design\nLTPJC 
+ = (3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300133\nslot = D1+T
+ D1\nvenue = AB1-411\nprofessor = J DIVYA
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design
+DTSTART:2023-02-16 10:45:00
+DTEND:2023-02-16 11:35:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BECE102L\ntitle = Digital Systems Design\nLTPJC 
+ = (3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300133\nslot = D1+T
+ D1\nvenue = AB1-411\nprofessor = J DIVYA
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design
+DTSTART:2023-04-06 10:45:00
+DTEND:2023-04-06 11:35:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BECE102L\ntitle = Digital Systems Design\nLTPJC 
+ = (3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300133\nslot = D1+T
+ D1\nvenue = AB1-411\nprofessor = J DIVYA
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design
+DTSTART:2023-05-18 10:45:00
+DTEND:2023-05-18 11:35:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BECE102L\ntitle = Digital Systems Design\nLTPJC 
+ = (3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300133\nslot = D1+T
+ D1\nvenue = AB1-411\nprofessor = J DIVYA
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming
+DTSTART:2023-02-16 10:45:00
+DTEND:2023-02-16 11:35:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BCSE102L\ntitle = Structured and Object-Oriented
+  Programming\nLTPJC = (2.0\, 0.0\, 0.0\, 0.0\, 2.0)\nclass_code = CH202223
+ 2300536\nslot = G1\nvenue = AB1-402\nprofessor = ILAVENDHAN A
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming
+DTSTART:2023-04-06 10:45:00
+DTEND:2023-04-06 11:35:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BCSE102L\ntitle = Structured and Object-Oriented
+  Programming\nLTPJC = (2.0\, 0.0\, 0.0\, 0.0\, 2.0)\nclass_code = CH202223
+ 2300536\nslot = G1\nvenue = AB1-402\nprofessor = ILAVENDHAN A
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming
+DTSTART:2023-05-18 10:45:00
+DTEND:2023-05-18 11:35:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BCSE102L\ntitle = Structured and Object-Oriented
+  Programming\nLTPJC = (2.0\, 0.0\, 0.0\, 0.0\, 2.0)\nclass_code = CH202223
+ 2300536\nslot = G1\nvenue = AB1-402\nprofessor = ILAVENDHAN A
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics
+DTSTART:2023-02-16 10:45:00
+DTEND:2023-02-16 11:35:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BPHY101L\ntitle = Engineering Physics\nLTPJC = (
+ 3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300020\nslot = E1+TE1\
+ nvenue = AB1-402\nprofessor = VINITHA G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics
+DTSTART:2023-04-06 10:45:00
+DTEND:2023-04-06 11:35:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BPHY101L\ntitle = Engineering Physics\nLTPJC = (
+ 3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300020\nslot = E1+TE1\
+ nvenue = AB1-402\nprofessor = VINITHA G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics
+DTSTART:2023-05-18 10:45:00
+DTEND:2023-05-18 11:35:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BPHY101L\ntitle = Engineering Physics\nLTPJC = (
+ 3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300020\nslot = E1+TE1\
+ nvenue = AB1-402\nprofessor = VINITHA G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics
+DTSTART:2023-02-17 11:40:00
+DTEND:2023-02-17 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BPHY101L\ntitle = Engineering Physics\nLTPJC = (
+ 3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300020\nslot = E1+TE1\
+ nvenue = AB1-402\nprofessor = VINITHA G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics
+DTSTART:2023-04-07 11:40:00
+DTEND:2023-04-07 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BPHY101L\ntitle = Engineering Physics\nLTPJC = (
+ 3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300020\nslot = E1+TE1\
+ nvenue = AB1-402\nprofessor = VINITHA G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics
+DTSTART:2023-05-19 11:40:00
+DTEND:2023-05-19 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BPHY101L\ntitle = Engineering Physics\nLTPJC = (
+ 3.0\, 0.0\, 0.0\, 0.0\, 3.0)\nclass_code = CH2022232300020\nslot = E1+TE1\
+ nvenue = AB1-402\nprofessor = VINITHA G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Technical English Communication
+DTSTART:2023-02-17 11:40:00
+DTEND:2023-02-17 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BENG101L\ntitle = Technical English Communicatio
+ n\nLTPJC = (2.0\, 0.0\, 0.0\, 0.0\, 2.0)\nclass_code = CH2022232300363\nsl
+ ot = C1\nvenue = AB1-411\nprofessor = BHUVANESWARI R
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Technical English Communication
+DTSTART:2023-04-07 11:40:00
+DTEND:2023-04-07 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BENG101L\ntitle = Technical English Communicatio
+ n\nLTPJC = (2.0\, 0.0\, 0.0\, 0.0\, 2.0)\nclass_code = CH2022232300363\nsl
+ ot = C1\nvenue = AB1-411\nprofessor = BHUVANESWARI R
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Technical English Communication
+DTSTART:2023-05-19 11:40:00
+DTEND:2023-05-19 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BENG101L\ntitle = Technical English Communicatio
+ n\nLTPJC = (2.0\, 0.0\, 0.0\, 0.0\, 2.0)\nclass_code = CH2022232300363\nsl
+ ot = C1\nvenue = AB1-411\nprofessor = BHUVANESWARI R
+LOCATION:AB1-411
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Differential Equations and Transforms
+DTSTART:2023-02-17 11:40:00
+DTEND:2023-02-17 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BMAT102L\ntitle = Differential Equations and Tra
+ nsforms\nLTPJC = (3.0\, 1.0\, 0.0\, 0.0\, 4.0)\nclass_code = CH20222323004
+ 30\nslot = A1+TA1+TAA1\nvenue = AB1-402\nprofessor = HANNAH GRACE G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Differential Equations and Transforms
+DTSTART:2023-04-07 11:40:00
+DTEND:2023-04-07 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BMAT102L\ntitle = Differential Equations and Tra
+ nsforms\nLTPJC = (3.0\, 1.0\, 0.0\, 0.0\, 4.0)\nclass_code = CH20222323004
+ 30\nslot = A1+TA1+TAA1\nvenue = AB1-402\nprofessor = HANNAH GRACE G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Differential Equations and Transforms
+DTSTART:2023-05-19 11:40:00
+DTEND:2023-05-19 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BMAT102L\ntitle = Differential Equations and Tra
+ nsforms\nLTPJC = (3.0\, 1.0\, 0.0\, 0.0\, 4.0)\nclass_code = CH20222323004
+ 30\nslot = A1+TA1+TAA1\nvenue = AB1-402\nprofessor = HANNAH GRACE G
+LOCATION:AB1-402
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Quantitative Skills Practice I
+DTSTART:2023-02-17 11:40:00
+DTEND:2023-02-17 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BSTS101P\ntitle = Quantitative Skills Practice I
+ \nLTPJC = (0.0\, 0.0\, 3.0\, 0.0\, 1.5)\nclass_code = CH2022232300689\nslo
+ t = F1+TF1\nvenue = AB1-401\nprofessor = ETHNUS (APT)
+LOCATION:AB1-401
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Quantitative Skills Practice I
+DTSTART:2023-04-07 11:40:00
+DTEND:2023-04-07 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BSTS101P\ntitle = Quantitative Skills Practice I
+ \nLTPJC = (0.0\, 0.0\, 3.0\, 0.0\, 1.5)\nclass_code = CH2022232300689\nslo
+ t = F1+TF1\nvenue = AB1-401\nprofessor = ETHNUS (APT)
+LOCATION:AB1-401
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Quantitative Skills Practice I
+DTSTART:2023-05-19 11:40:00
+DTEND:2023-05-19 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BSTS101P\ntitle = Quantitative Skills Practice I
+ \nLTPJC = (0.0\, 0.0\, 3.0\, 0.0\, 1.5)\nclass_code = CH2022232300689\nslo
+ t = F1+TF1\nvenue = AB1-401\nprofessor = ETHNUS (APT)
+LOCATION:AB1-401
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Technical English Communication Lab
+DTSTART:2023-02-20 08:00:00
+DTEND:2023-02-20 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BENG101P\ntitle = Technical English Communicatio
+ n Lab\nLTPJC = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300364
+ \nslot = L31+L32\nvenue = AB1-405\nprofessor = BHUVANESWARI R
+LOCATION:AB1-405
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Technical English Communication Lab
+DTSTART:2023-04-03 08:00:00
+DTEND:2023-04-03 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BENG101P\ntitle = Technical English Communicatio
+ n Lab\nLTPJC = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300364
+ \nslot = L31+L32\nvenue = AB1-405\nprofessor = BHUVANESWARI R
+LOCATION:AB1-405
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Technical English Communication Lab
+DTSTART:2023-05-15 08:00:00
+DTEND:2023-05-15 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BENG101P\ntitle = Technical English Communicatio
+ n Lab\nLTPJC = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300364
+ \nslot = L31+L32\nvenue = AB1-405\nprofessor = BHUVANESWARI R
+LOCATION:AB1-405
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Technical English Communication Lab
+DTSTART:2023-02-20 08:00:00
+DTEND:2023-02-20 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BENG101P\ntitle = Technical English Communicatio
+ n Lab\nLTPJC = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300364
+ \nslot = L31+L32\nvenue = AB1-405\nprofessor = BHUVANESWARI R
+LOCATION:AB1-405
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Technical English Communication Lab
+DTSTART:2023-04-03 08:00:00
+DTEND:2023-04-03 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BENG101P\ntitle = Technical English Communicatio
+ n Lab\nLTPJC = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300364
+ \nslot = L31+L32\nvenue = AB1-405\nprofessor = BHUVANESWARI R
+LOCATION:AB1-405
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Technical English Communication Lab
+DTSTART:2023-05-15 08:00:00
+DTEND:2023-05-15 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BENG101P\ntitle = Technical English Communicatio
+ n Lab\nLTPJC = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300364
+ \nslot = L31+L32\nvenue = AB1-405\nprofessor = BHUVANESWARI R
+LOCATION:AB1-405
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design Lab
+DTSTART:2023-02-20 08:00:00
+DTEND:2023-02-20 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BECE102P\ntitle = Digital Systems Design Lab\nLT
+ PJC = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300183\nslot = 
+ L33+L34\nvenue = AB1-207\nprofessor = J DIVYA
+LOCATION:AB1-207
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design Lab
+DTSTART:2023-04-03 08:00:00
+DTEND:2023-04-03 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BECE102P\ntitle = Digital Systems Design Lab\nLT
+ PJC = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300183\nslot = 
+ L33+L34\nvenue = AB1-207\nprofessor = J DIVYA
+LOCATION:AB1-207
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design Lab
+DTSTART:2023-05-15 08:00:00
+DTEND:2023-05-15 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BECE102P\ntitle = Digital Systems Design Lab\nLT
+ PJC = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300183\nslot = 
+ L33+L34\nvenue = AB1-207\nprofessor = J DIVYA
+LOCATION:AB1-207
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design Lab
+DTSTART:2023-02-20 08:00:00
+DTEND:2023-02-20 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BECE102P\ntitle = Digital Systems Design Lab\nLT
+ PJC = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300183\nslot = 
+ L33+L34\nvenue = AB1-207\nprofessor = J DIVYA
+LOCATION:AB1-207
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design Lab
+DTSTART:2023-04-03 08:00:00
+DTEND:2023-04-03 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BECE102P\ntitle = Digital Systems Design Lab\nLT
+ PJC = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300183\nslot = 
+ L33+L34\nvenue = AB1-207\nprofessor = J DIVYA
+LOCATION:AB1-207
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Digital Systems Design Lab
+DTSTART:2023-05-15 08:00:00
+DTEND:2023-05-15 08:50:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BECE102P\ntitle = Digital Systems Design Lab\nLT
+ PJC = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300183\nslot = 
+ L33+L34\nvenue = AB1-207\nprofessor = J DIVYA
+LOCATION:AB1-207
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming Lab
+DTSTART:2023-02-21 08:55:00
+DTEND:2023-02-21 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BCSE102P\ntitle = Structured and Object-Oriented
+  Programming Lab\nLTPJC = (0.0\, 0.0\, 4.0\, 0.0\, 2.0)\nclass_code = CH20
+ 22232300674\nslot = L29+L30+L37+L38\nvenue = AB1-404B\nprofessor = ILAVEND
+ HAN A
+LOCATION:AB1-404B
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming Lab
+DTSTART:2023-04-04 08:55:00
+DTEND:2023-04-04 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BCSE102P\ntitle = Structured and Object-Oriented
+  Programming Lab\nLTPJC = (0.0\, 0.0\, 4.0\, 0.0\, 2.0)\nclass_code = CH20
+ 22232300674\nslot = L29+L30+L37+L38\nvenue = AB1-404B\nprofessor = ILAVEND
+ HAN A
+LOCATION:AB1-404B
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming Lab
+DTSTART:2023-05-16 08:55:00
+DTEND:2023-05-16 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BCSE102P\ntitle = Structured and Object-Oriented
+  Programming Lab\nLTPJC = (0.0\, 0.0\, 4.0\, 0.0\, 2.0)\nclass_code = CH20
+ 22232300674\nslot = L29+L30+L37+L38\nvenue = AB1-404B\nprofessor = ILAVEND
+ HAN A
+LOCATION:AB1-404B
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming Lab
+DTSTART:2023-02-21 08:55:00
+DTEND:2023-02-21 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BCSE102P\ntitle = Structured and Object-Oriented
+  Programming Lab\nLTPJC = (0.0\, 0.0\, 4.0\, 0.0\, 2.0)\nclass_code = CH20
+ 22232300674\nslot = L29+L30+L37+L38\nvenue = AB1-404B\nprofessor = ILAVEND
+ HAN A
+LOCATION:AB1-404B
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming Lab
+DTSTART:2023-04-04 08:55:00
+DTEND:2023-04-04 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BCSE102P\ntitle = Structured and Object-Oriented
+  Programming Lab\nLTPJC = (0.0\, 0.0\, 4.0\, 0.0\, 2.0)\nclass_code = CH20
+ 22232300674\nslot = L29+L30+L37+L38\nvenue = AB1-404B\nprofessor = ILAVEND
+ HAN A
+LOCATION:AB1-404B
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming Lab
+DTSTART:2023-05-16 08:55:00
+DTEND:2023-05-16 09:45:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BCSE102P\ntitle = Structured and Object-Oriented
+  Programming Lab\nLTPJC = (0.0\, 0.0\, 4.0\, 0.0\, 2.0)\nclass_code = CH20
+ 22232300674\nslot = L29+L30+L37+L38\nvenue = AB1-404B\nprofessor = ILAVEND
+ HAN A
+LOCATION:AB1-404B
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming Lab
+DTSTART:2023-02-17 11:40:00
+DTEND:2023-02-17 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BCSE102P\ntitle = Structured and Object-Oriented
+  Programming Lab\nLTPJC = (0.0\, 0.0\, 4.0\, 0.0\, 2.0)\nclass_code = CH20
+ 22232300674\nslot = L29+L30+L37+L38\nvenue = AB1-404B\nprofessor = ILAVEND
+ HAN A
+LOCATION:AB1-404B
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming Lab
+DTSTART:2023-04-07 11:40:00
+DTEND:2023-04-07 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BCSE102P\ntitle = Structured and Object-Oriented
+  Programming Lab\nLTPJC = (0.0\, 0.0\, 4.0\, 0.0\, 2.0)\nclass_code = CH20
+ 22232300674\nslot = L29+L30+L37+L38\nvenue = AB1-404B\nprofessor = ILAVEND
+ HAN A
+LOCATION:AB1-404B
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming Lab
+DTSTART:2023-05-19 11:40:00
+DTEND:2023-05-19 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BCSE102P\ntitle = Structured and Object-Oriented
+  Programming Lab\nLTPJC = (0.0\, 0.0\, 4.0\, 0.0\, 2.0)\nclass_code = CH20
+ 22232300674\nslot = L29+L30+L37+L38\nvenue = AB1-404B\nprofessor = ILAVEND
+ HAN A
+LOCATION:AB1-404B
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming Lab
+DTSTART:2023-02-17 11:40:00
+DTEND:2023-02-17 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BCSE102P\ntitle = Structured and Object-Oriented
+  Programming Lab\nLTPJC = (0.0\, 0.0\, 4.0\, 0.0\, 2.0)\nclass_code = CH20
+ 22232300674\nslot = L29+L30+L37+L38\nvenue = AB1-404B\nprofessor = ILAVEND
+ HAN A
+LOCATION:AB1-404B
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming Lab
+DTSTART:2023-04-07 11:40:00
+DTEND:2023-04-07 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BCSE102P\ntitle = Structured and Object-Oriented
+  Programming Lab\nLTPJC = (0.0\, 0.0\, 4.0\, 0.0\, 2.0)\nclass_code = CH20
+ 22232300674\nslot = L29+L30+L37+L38\nvenue = AB1-404B\nprofessor = ILAVEND
+ HAN A
+LOCATION:AB1-404B
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Structured and Object-Oriented Programming Lab
+DTSTART:2023-05-19 11:40:00
+DTEND:2023-05-19 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BCSE102P\ntitle = Structured and Object-Oriented
+  Programming Lab\nLTPJC = (0.0\, 0.0\, 4.0\, 0.0\, 2.0)\nclass_code = CH20
+ 22232300674\nslot = L29+L30+L37+L38\nvenue = AB1-404B\nprofessor = ILAVEND
+ HAN A
+LOCATION:AB1-404B
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics Lab
+DTSTART:2023-02-17 11:40:00
+DTEND:2023-02-17 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BPHY101P\ntitle = Engineering Physics Lab\nLTPJC
+  = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300070\nslot = L55
+ +L56\nvenue = AB1-202\nprofessor = VINITHA G
+LOCATION:AB1-202
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics Lab
+DTSTART:2023-04-07 11:40:00
+DTEND:2023-04-07 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BPHY101P\ntitle = Engineering Physics Lab\nLTPJC
+  = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300070\nslot = L55
+ +L56\nvenue = AB1-202\nprofessor = VINITHA G
+LOCATION:AB1-202
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics Lab
+DTSTART:2023-05-19 11:40:00
+DTEND:2023-05-19 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BPHY101P\ntitle = Engineering Physics Lab\nLTPJC
+  = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300070\nslot = L55
+ +L56\nvenue = AB1-202\nprofessor = VINITHA G
+LOCATION:AB1-202
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics Lab
+DTSTART:2023-02-17 11:40:00
+DTEND:2023-02-17 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 3\, 25\, 0\, 0
+ )}
+DESCRIPTION:course_code = BPHY101P\ntitle = Engineering Physics Lab\nLTPJC
+  = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300070\nslot = L55
+ +L56\nvenue = AB1-202\nprofessor = VINITHA G
+LOCATION:AB1-202
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics Lab
+DTSTART:2023-04-07 11:40:00
+DTEND:2023-04-07 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 5\, 2\, 0\, 0)
+ }
+DESCRIPTION:course_code = BPHY101P\ntitle = Engineering Physics Lab\nLTPJC
+  = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300070\nslot = L55
+ +L56\nvenue = AB1-202\nprofessor = VINITHA G
+LOCATION:AB1-202
+TZINFO:Asia/Kolkata
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Engineering Physics Lab
+DTSTART:2023-05-19 11:40:00
+DTEND:2023-05-19 12:30:00
+DTSTAMP:2023-02-14 23:50:22.438037
+RRULE:{'FREQ': 'weekly'\, 'UNTIL': datetime.datetime(2023\, 6\, 12\, 0\, 0
+ )}
+DESCRIPTION:course_code = BPHY101P\ntitle = Engineering Physics Lab\nLTPJC
+  = (0.0\, 0.0\, 2.0\, 0.0\, 1.0)\nclass_code = CH2022232300070\nslot = L55
+ +L56\nvenue = AB1-202\nprofessor = VINITHA G
+LOCATION:AB1-202
+TZINFO:Asia/Kolkata
+END:VEVENT
+END:VCALENDAR

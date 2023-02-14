@@ -46,25 +46,25 @@ def add_events(
         day_rows: list[str],
         slot_timings: list[tuple[list[int]]],
         courses: dict[str, dict],
-        semester_dates: list[datetime.datetime],
+        semester_dates: list[datetime.date],
         calendar: icalendar.cal.Calendar
 ) -> None:
     """Goes through the list of slots in the days and adds any classes found to the calendar as events"""
     for day_index, day_row in enumerate(day_rows):
         for slot_index, slot_cell in enumerate(day_row):
-            if "-" in slot_cell:
-                slot_cell = slot_cell.split()
+            if "-" in slot_cell and slot_cell != "-":
+                slot_cell = slot_cell.split("-")
                 slot_course = slot_cell[1]
                 slot_venue = "-".join(slot_cell[3:5])
+                course = courses[slot_course]
                 for start_date, end_date in zip(semester_dates[::2], semester_dates[1::2]):
                     event = icalendar.Event()
-                    course = courses[slot_course]
                     event['summary'] = course['title']
                     event['location'] = slot_venue
                     newline_character = "\n"
                     event['description'] = f"""course_code = {slot_course}
-    {newline_character.join((" = ".join(item) for item in course.items()))}"""
-                    start_date = start_date + datetime.timedelta(days=day_index - start_date.weekday() % 7)
+{newline_character.join((" = ".join(map(str, item)) for item in course.items()))}"""
+                    start_date = start_date + datetime.timedelta(days=(day_index - start_date.weekday()) % 7)
                     # To account for the first day of the week where this slot occurs after college reopens
                     event_slot_timings = slot_timings[day_index]
                     event['dtstart'] = datetime.datetime.combine(
@@ -74,21 +74,26 @@ def add_events(
                         start_date,
                         event_slot_timings[1]
                     )
-                    event['rrule'] = {'FREQ': 'weekly', 'UNTIL': end_date}
+                    event['dtstamp'] = datetime.datetime.now()
+                    event['rrule'] = {'FREQ': 'weekly',
+                                      'UNTIL': datetime.datetime.combine(end_date, datetime.datetime.min.time())}
                     event['tzinfo'] = "Asia/Kolkata"
                     calendar.add_component(event)
 
 
 def generate_calendar(
-        courses: dict[str, dict],
+        courses_text: str,
         timetable_text: str,
-        semester_dates: list[datetime.datetime]
-) -> icalendar.cal.Calendar:
+        semester_dates: list[datetime.date]
+) -> str:
+    courses = get_courses(courses_text)
     calendar = icalendar.Calendar()
     calendar['prodid'] = '-// Andhavarapu Balu // github.com/JustTheCoolest/VIT-Chennai-Timetable-to-Calendar //EN'
+    calendar['version'] = "2.0"
     calendar['x-wr-timezone'] = 'Asia/Kolkata'
-    rows = map(str.split, timetable_text.splitlines())
+    rows = tuple(map(str.split, timetable_text.splitlines()))
     theory_slot_timings = get_slot_times(rows[0][2:], rows[1][1:])
     add_events(rows[4::2], theory_slot_timings, courses, semester_dates, calendar)
     lab_slot_timings = get_slot_times(rows[2][2:], rows[3][1:])
     add_events(rows[5::2], theory_slot_timings, courses, semester_dates, calendar)
+    return calendar.to_ical()

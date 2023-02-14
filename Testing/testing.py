@@ -1,5 +1,6 @@
 import unittest
 from Backend import calendar_generator
+import datetime
 
 
 class TestCalendarGenerator(unittest.TestCase):
@@ -83,39 +84,55 @@ class TestCalendarGenerator(unittest.TestCase):
         end_times = "08:50	09:45	10:40	11:35	12:30	01:25	Lunch	02:50	03:45	04:40	05:35	06:30	07:25".split()
         self.assertEqual(
             calendar_generator.get_slot_times(start_times, end_times),
-            [([8, 0], [8, 50]),
-             ([8, 55], [9, 45]),
-             ([9, 50], [10, 40]),
-             ([10, 45], [11, 35]),
-             ([11, 40], [12, 30]),
-             ([12, 35], [1, 25]),
+            [(datetime.time(8, 0), datetime.time(8, 50)),
+             (datetime.time(8, 55), datetime.time(9, 45)),
+             (datetime.time(9, 50), datetime.time(10, 40)),
+             (datetime.time(10, 45), datetime.time(11, 35)),
+             (datetime.time(11, 40), datetime.time(12, 30)),
+             (datetime.time(12, 35), datetime.time(1, 25)),
              ('Lunch', 'Lunch'),
-             ([2, 0], [2, 50]),
-             ([2, 55], [3, 45]),
-             ([3, 50], [4, 40]),
-             ([4, 45], [5, 35]),
-             ([5, 40], [6, 30]),
-             ([6, 35], [7, 25])]
+             (datetime.time(2, 0), datetime.time(2, 50)),
+             (datetime.time(2, 55), datetime.time(3, 45)),
+             (datetime.time(3, 50), datetime.time(4, 40)),
+             (datetime.time(4, 45), datetime.time(5, 35)),
+             (datetime.time(5, 40), datetime.time(6, 30)),
+             (datetime.time(6, 35), datetime.time(7, 25))]
         )
         # lab slots
         start_times = "08:00	08:50	09:50	10:40	11:40	12:30	Lunch	02:00	02:50	03:50	04:40	05:40	06:30".split()
         end_times = "08:50	09:40	10:40	11:30	12:30	01:20	Lunch	02:50	03:40	04:40	05:30	06:30	07:20".split()
         self.assertEqual(
             calendar_generator.get_slot_times(start_times, end_times),
-            [([8, 0], [8, 50]),
-             ([8, 50], [9, 40]),
-             ([9, 50], [10, 40]),
-             ([10, 40], [11, 30]),
-             ([11, 40], [12, 30]),
-             ([12, 30], [1, 20]),
+            [(datetime.time(8, 0), datetime.time(8, 50)),
+             (datetime.time(8, 50), datetime.time(9, 40)),
+             (datetime.time(9, 50), datetime.time(10, 40)),
+             (datetime.time(10, 40), datetime.time(11, 30)),
+             (datetime.time(11, 40), datetime.time(12, 30)),
+             (datetime.time(12, 30), datetime.time(1, 20)),
              ('Lunch', 'Lunch'),
-             ([2, 0], [2, 50]),
-             ([2, 50], [3, 40]),
-             ([3, 50], [4, 40]),
-             ([4, 40], [5, 30]),
-             ([5, 40], [6, 30]),
-             ([6, 30], [7, 20])]
+             (datetime.time(2, 0), datetime.time(2, 50)),
+             (datetime.time(2, 50), datetime.time(3, 40)),
+             (datetime.time(3, 50), datetime.time(4, 40)),
+             (datetime.time(4, 40), datetime.time(5, 30)),
+             (datetime.time(5, 40), datetime.time(6, 30)),
+             (datetime.time(6, 30), datetime.time(7, 20))]
         )
+
+    def test_generate_calendar(self):
+        ics = calendar_generator.generate_calendar(
+            open("WinterSemester2023sample.txt").read(),
+            open("timetable_winter2023.txt").read(),
+            [
+                datetime.date(2023, 2, 15),
+                datetime.date(2023, 3, 25),
+                datetime.date(2023, 4, 2),
+                datetime.date(2023, 5, 2),
+                datetime.date(2023, 5, 14),
+                datetime.date(2023, 6, 12)
+            ]
+        )
+        with open("WinterSemester2023sample.ics", "wb") as file:
+            file.write(ics)
 
 
 if __name__ == '__main__':
