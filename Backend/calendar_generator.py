@@ -46,4 +46,4 @@ def generate_calendar(courses: list[dict], timetable_text: str) -> icalendar.cal
     calendar['prodid'] = '-// Andhavarapu Balu // github.com/JustTheCoolest/VIT-Chennai-Timetable-to-Calendar //EN'
     calendar['x-wr-timezone'] = 'Asia/Kolkata'
     rows = map(str.split, timetable_text.splitlines())
-    slot_timings = get_slot_times(rows[0][1:], rows[1])
+    slot_timings = get_slot_times(rows[0][2:], rows[1][1:])
