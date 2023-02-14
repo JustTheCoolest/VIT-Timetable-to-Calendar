@@ -12,8 +12,8 @@ def get_courses(text: str) -> dict[str, dict]:
     for line_index in range(start_index, len(data), 31):
         slot = data[line_index + 15][:-2]
         header = (data[line_index + 4].split(' - '))
-        slot = header[0]
-        courses[slot] = {
+        course_code = header[0]
+        courses[course_code] = {
             'title': header[1],
             'LTPJC': tuple(map(float, data[line_index + 8].split())),
             'class_code': data[line_index + 13],
