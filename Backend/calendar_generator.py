@@ -1,5 +1,9 @@
 import icalendar
 import datetime
+from dateutil import rrule as dateutil_rrule
+
+
+days = ("MO", "TU", "WE", "TH", "FR", "SA", "SU")
 
 
 def get_courses(text: str) -> dict[str, dict]:
@@ -58,29 +62,35 @@ def add_events(
             slot_course = slot_cell[1]
             slot_venue = "-".join(slot_cell[3:5])
             course = courses[slot_course]
-            for start_date, end_date in zip(semester_dates[::2], semester_dates[1::2]):
-                event = icalendar.Event()
-                event['summary'] = course['title']
-                event['location'] = slot_venue
-                newline_character = "\n"
-                event['description'] = f"""course_code = {slot_course}
+            event = icalendar.Event()
+            event['summary'] = course['title']
+            event['location'] = slot_venue
+            newline_character = "\n"
+            event['description'] = f"""course_code = {slot_course}
 {newline_character.join((" = ".join(map(str, item)) for item in course.items()))}"""
-                start_date = start_date + datetime.timedelta(days=(day_index - start_date.weekday()) % 7)
-                # To account for the first day of the week where this slot occurs after college reopens
-                start_time, end_time = slot_timings[slot_index]
-                ical_time_format = '%Y%m%dT%H%M%S'
-                dtstart = datetime.datetime.combine(start_date, start_time)
-                event['dtstart'] = dtstart.strftime(ical_time_format)
-                event['dtend'] = datetime.datetime.combine(
-                    start_date,
-                    end_time
-                ).strftime(ical_time_format)
-                event['dtstamp'] = datetime.datetime.now().strftime(ical_time_format)
-                event['rrule'] = {'FREQ': 'weekly',
-                                  'UNTIL': datetime.datetime.combine(end_date, datetime.datetime.min.time())}
-                event['tzinfo'] = "Asia/Kolkata"
-                event['uid'] = dtstart.strftime('%y%m%d%H%M')
-                calendar.add_component(event)
+            semester_start = semester_dates[0]
+            start_time, end_time = slot_timings[slot_index]
+            ical_time_format = '%Y%m%dT%H%M%S'
+            dtstart = datetime.datetime.combine(semester_start, start_time)
+            event['dtstart'] = dtstart.strftime(ical_time_format)
+            event['dtend'] = datetime.datetime.combine(
+                semester_start,
+                end_time
+            ).strftime(ical_time_format)
+            event['dtstamp'] = datetime.datetime.now().strftime(ical_time_format)
+            event['tzinfo'] = "Asia/Kolkata"
+            event['uid'] = str(day_index)+"-"+str(slot_index)
+            event['rrule'] = icalendar.vRecur(freq='WEEKLY', byday=days[day_index])
+            exdates = []
+            for start_date, end_date in zip(semester_dates[1::2], semester_dates[2::2]):
+                exdates.extend(dateutil_rrule.rrule(
+                    dateutil_rrule.WEEKLY,
+                    dtstart=start_date,
+                    until=end_date,
+                    byweekday=day_index
+                ))
+            event['exdate'] = [date.strftime("%Y%m%d") for date in exdates]
+            calendar.add_component(event)
 
 
 def generate_calendar(
@@ -88,6 +98,9 @@ def generate_calendar(
         timetable_text: str,
         semester_dates: list[datetime.date]
 ) -> str:
+    """
+    semester_dates: End date is exclusive
+    """
     courses = get_courses(courses_text)
     calendar = icalendar.Calendar()
     calendar['prodid'] = '-// Andhavarapu Balu // github.com/JustTheCoolest/VIT-Chennai-Timetable-to-Calendar //EN'

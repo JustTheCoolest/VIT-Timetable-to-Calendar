@@ -125,10 +125,10 @@ class TestCalendarGenerator(unittest.TestCase):
             [
                 datetime.date(2023, 2, 15),
                 datetime.date(2023, 3, 25),
-                datetime.date(2023, 4, 2),
+                datetime.date(2023, 4, 3),
                 datetime.date(2023, 5, 2),
-                datetime.date(2023, 5, 14),
-                datetime.date(2023, 6, 12)
+                datetime.date(2023, 5, 15),
+                datetime.date(2023, 6, 19)
             ]
         )
         with open("WinterSemester2023sample.ics", "wb") as file:
