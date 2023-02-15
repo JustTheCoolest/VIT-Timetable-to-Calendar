@@ -68,13 +68,14 @@ def add_events(
                 start_date = start_date + datetime.timedelta(days=(day_index - start_date.weekday()) % 7)
                 # To account for the first day of the week where this slot occurs after college reopens
                 start_time, end_time = slot_timings[slot_index]
+                ical_time_format = '%Y%m%dT%H%M%S'
                 dtstart = datetime.datetime.combine(start_date, start_time)
-                event['dtstart'] = dtstart
+                event['dtstart'] = dtstart.strftime(ical_time_format)
                 event['dtend'] = datetime.datetime.combine(
                     start_date,
                     end_time
-                )
-                event['dtstamp'] = datetime.datetime.now()
+                ).strftime(ical_time_format)
+                event['dtstamp'] = datetime.datetime.now().strftime(ical_time_format)
                 event['rrule'] = {'FREQ': 'weekly',
                                   'UNTIL': datetime.datetime.combine(end_date, datetime.datetime.min.time())}
                 event['tzinfo'] = "Asia/Kolkata"
