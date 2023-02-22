@@ -89,14 +89,14 @@ class TestCalendarGenerator(unittest.TestCase):
              (datetime.time(9, 50), datetime.time(10, 40)),
              (datetime.time(10, 45), datetime.time(11, 35)),
              (datetime.time(11, 40), datetime.time(12, 30)),
-             (datetime.time(12, 35), datetime.time(1, 25)),
+             (datetime.time(12, 35), datetime.time(13, 25)),
              ('Lunch', 'Lunch'),
-             (datetime.time(2, 0), datetime.time(2, 50)),
-             (datetime.time(2, 55), datetime.time(3, 45)),
-             (datetime.time(3, 50), datetime.time(4, 40)),
-             (datetime.time(4, 45), datetime.time(5, 35)),
-             (datetime.time(5, 40), datetime.time(6, 30)),
-             (datetime.time(6, 35), datetime.time(7, 25))]
+             (datetime.time(14, 0), datetime.time(14, 50)),
+             (datetime.time(14, 55), datetime.time(15, 45)),
+             (datetime.time(15, 50), datetime.time(16, 40)),
+             (datetime.time(16, 45), datetime.time(17, 35)),
+             (datetime.time(17, 40), datetime.time(18, 30)),
+             (datetime.time(18, 35), datetime.time(19, 25))]
         )
         # lab slots
         start_times = "08:00	08:50	09:50	10:40	11:40	12:30	Lunch	02:00	02:50	03:50	04:40	05:40	06:30".split()
@@ -108,14 +108,14 @@ class TestCalendarGenerator(unittest.TestCase):
              (datetime.time(9, 50), datetime.time(10, 40)),
              (datetime.time(10, 40), datetime.time(11, 30)),
              (datetime.time(11, 40), datetime.time(12, 30)),
-             (datetime.time(12, 30), datetime.time(1, 20)),
+             (datetime.time(12, 30), datetime.time(13, 20)),
              ('Lunch', 'Lunch'),
-             (datetime.time(2, 0), datetime.time(2, 50)),
-             (datetime.time(2, 50), datetime.time(3, 40)),
-             (datetime.time(3, 50), datetime.time(4, 40)),
-             (datetime.time(4, 40), datetime.time(5, 30)),
-             (datetime.time(5, 40), datetime.time(6, 30)),
-             (datetime.time(6, 30), datetime.time(7, 20))]
+             (datetime.time(14, 0), datetime.time(14, 50)),
+             (datetime.time(14, 50), datetime.time(15, 40)),
+             (datetime.time(15, 50), datetime.time(16, 40)),
+             (datetime.time(16, 40), datetime.time(17, 30)),
+             (datetime.time(17, 40), datetime.time(18, 30)),
+             (datetime.time(18, 30), datetime.time(19, 20))]
         )
 
     def test_generate_calendar(self):

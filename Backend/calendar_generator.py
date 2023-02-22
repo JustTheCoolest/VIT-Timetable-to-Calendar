@@ -36,11 +36,21 @@ def get_slot_times(start_times: list[str], end_times: list[str]) -> list[(dateti
      time = list(hours, minutes)
     """
     for times in (start_times, end_times):
+        noon_flag = False
+        # Bug - [12am, 1am) would be evaluated as pm
+        previous_time = datetime.time(0)
         for index, time in enumerate(times):
             if time == "Lunch":
                 continue
-            time = time.split(":")
-            time = datetime.time(*(int(component) for component in time))
+            time_list = list(int(component) for component in time.split(":"))
+            time = datetime.time(*time_list)
+            if time < previous_time:
+                noon_flag = True
+            if noon_flag:
+                time_list[0] += 12
+                time = datetime.time(*time_list)
+            if not noon_flag:
+                previous_time = time
             times[index] = time
     slot_times = list(zip(start_times, end_times))
     return slot_times
