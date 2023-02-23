@@ -122,3 +122,13 @@ def generate_calendar(
     lab_slot_timings = get_slot_times(rows[2][2:], rows[3][1:])
     add_events((row[1:] for row in rows[5::2]), theory_slot_timings, courses, semester_dates, calendar)
     return calendar.to_ical()
+
+
+def chennai_split_string(page_text):
+    return courses_text, timetable_text
+
+
+def get_calendar(branch: str, page_text: str, semester_dates: list[datetime.datetime]) -> str:
+    branch = branch.capitalize()
+    if branch == "Chennai":
+        generate_calendar(*chennai_split_string(page_text), semester_dates)

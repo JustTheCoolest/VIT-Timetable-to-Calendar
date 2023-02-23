@@ -134,6 +134,15 @@ class TestCalendarGenerator(unittest.TestCase):
         with open("Chennai/WinterSemester2023sample.ics", "wb") as file:
             file.write(ics)
 
+    def test_chennai_split(self):
+        self.assertEqual(
+            calendar_generator.chennai_split_string(page_text),
+            (
+                open('Chennai/WinterSemester2023sample.txt').read(),
+                open('Chennai/timetable_winter2023.txt')
+            )
+        )
+
 
 if __name__ == '__main__':
     unittest.main()
