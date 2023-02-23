@@ -2,7 +2,6 @@ import icalendar
 import datetime
 from dateutil import rrule as dateutil_rrule
 
-
 days = ("MO", "TU", "WE", "TH", "FR", "SA", "SU")
 
 
@@ -89,7 +88,7 @@ def add_events(
             ).strftime(ical_time_format)
             event['dtstamp'] = datetime.datetime.now().strftime(ical_time_format)
             event['tzinfo'] = "Asia/Kolkata"
-            event['uid'] = str(day_index)+"-"+str(slot_index)
+            event['uid'] = str(day_index) + "-" + str(slot_index)
             event['rrule'] = icalendar.vRecur(freq='WEEKLY', byday=days[day_index])
             exdates = []
             for start_date, end_date in zip(semester_dates[1::2], semester_dates[2::2]):
