@@ -6,7 +6,7 @@ import datetime
 class TestCalendarGenerator(unittest.TestCase):
 
     def test_get_courses(self):
-        with open('WinterSemester2023sample.txt') as text_source:
+        with open('Chennai/WinterSemester2023sample.txt') as text_source:
             self.assertEqual(
                 calendar_generator.get_courses(text_source.read()),
                 {
@@ -120,8 +120,8 @@ class TestCalendarGenerator(unittest.TestCase):
 
     def test_generate_calendar(self):
         ics = calendar_generator.generate_calendar(
-            open("WinterSemester2023sample.txt").read(),
-            open("timetable_winter2023.txt").read(),
+            open("Chennai/WinterSemester2023sample.txt").read(),
+            open("Chennai/timetable_winter2023.txt").read(),
             [
                 datetime.date(2023, 2, 15),
                 datetime.date(2023, 3, 25),
@@ -131,7 +131,7 @@ class TestCalendarGenerator(unittest.TestCase):
                 datetime.date(2023, 6, 19)
             ]
         )
-        with open("WinterSemester2023sample.ics", "wb") as file:
+        with open("Chennai/WinterSemester2023sample.ics", "wb") as file:
             file.write(ics)
 
 
