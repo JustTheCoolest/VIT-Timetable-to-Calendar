@@ -26,13 +26,14 @@ def get_role_names():
     return course_codes
 
 
-def filter_role_names(role_names, guild):
-    existing_roles = [role.name for role in guild.roles]
-    return [role_name for role_name in role_names if role_name not in existing_roles]
-
-
-def create_roles(guild, role_names):
-    return asyncio.gather(*[guild.create_role(name=role_name) for role_name in role_names])
+async def get_roles(guild, role_names):
+    roles = []
+    for role_name in role_names:
+        role = discord.utils.get(guild.roles, name=role_name)
+        if role:
+            roles.append(role)
+    roles.extend(await asyncio.gather(*[guild.create_role(name=role_name) for role_name in role_names]))
+    return roles
 
 
 def create_channels(guild, roles):
@@ -57,10 +58,8 @@ def create_channels(guild, roles):
 
 @client.event
 async def on_ready():
-    role_names = get_role_names()
     guild = client.get_guild(discord_tokens.active_server_id)
-    role_names = filter_role_names(role_names, guild)
-    roles = create_roles(guild, role_names)
+    roles = await get_roles(guild, get_role_names())
     create_channels(guild, roles)
     await client.close()
 
