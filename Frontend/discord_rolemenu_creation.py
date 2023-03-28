@@ -30,9 +30,9 @@ async def get_roles(guild, role_names):
     roles = []
     for role_name in role_names:
         role = discord.utils.get(guild.roles, name=role_name)
-        if role:
-            roles.append(role)
-    roles.extend(await asyncio.gather(*[guild.create_role(name=role_name) for role_name in role_names]))
+        if not role:
+            role = await guild.create_role(name=role_name)
+        roles.append(role)
     return roles
 
 
