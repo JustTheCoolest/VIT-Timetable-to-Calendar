@@ -11,8 +11,8 @@ import asyncio
 import discord
 from Backend import calendar_generator
 import discord_tokens
-
-# discord_tokens is a file that contains the following variables: bot_token, active_server_id, courses_text
+"""discord_tokens is a file that contains the following variables:
+bot_token, active_server_id, courses_text, category_id, all_channel_role"""
 
 
 client = discord.Client(intents=discord.Intents.default())
@@ -31,15 +31,28 @@ def filter_role_names(role_names, guild):
     return [role_name for role_name in role_names if role_name not in existing_roles]
 
 
-async def create_role_and_channels(role_name, guild, all_channel_role=None):
-    role = guild.create_role(name=role_name)
-    overwrites = {
-        guild.default_role: discord.PermissionOverwrite(read_messages=False),
-        role: discord.PermissionOverwrite(read_messages=True)
-    }
-    if all_channel_role:
-        overwrites[all_channel_role] = discord.PermissionOverwrite(read_messages=True)
-    await guild.create_text_channel(role_name, overwrites=overwrites)
+def create_roles(guild, role_names):
+    return asyncio.gather(*[guild.create_role(name=role_name) for role_name in role_names])
+
+
+def create_channels(guild, roles):
+    all_channel_role = None
+    if discord_tokens.all_channel_role:
+        all_channel_role = guild.get_role(discord_tokens.all_channel_role)
+    category = guild.get_channel(discord_tokens.category_id)
+
+    async def create_channel(role):
+        overwrites = {
+            guild.default_role: discord.PermissionOverwrite(read_messages=False),
+            role: discord.PermissionOverwrite(read_messages=True)
+        }
+        if all_channel_role:
+            overwrites[all_channel_role] = discord.PermissionOverwrite(read_messages=True)
+        try:
+            await guild.create_text_channel(role.name, overwrites=overwrites, category=category)
+        except discord.errors.HTTPException:
+            print(f"Failed to create channel for role {role.name}")
+    asyncio.gather(*[create_channel(role) for role in roles])
 
 
 @client.event
@@ -47,9 +60,8 @@ async def on_ready():
     role_names = get_role_names()
     guild = client.get_guild(discord_tokens.active_server_id)
     role_names = filter_role_names(role_names, guild)
-    all_channel_role = discord.utils.get(guild.roles, name='All Channel')
-    await asyncio.gather(*[create_role_and_channels(role_name, guild, all_channel_role)
-                           for role_name in role_names])
+    roles = create_roles(guild, role_names)
+    create_channels(guild, roles)
     await client.close()
 
 
