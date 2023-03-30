@@ -36,11 +36,12 @@ async def get_roles(guild, role_names):
     return roles
 
 
-def create_channels(guild, roles):
+async def create_channels(guild, roles):
     all_channel_role = None
     if discord_tokens.all_channel_role:
         all_channel_role = guild.get_role(discord_tokens.all_channel_role)
     category = guild.get_channel(discord_tokens.category_id)
+    channel_names = [channel.name for channel in category.channels]
 
     async def create_channel(role):
         overwrites = {
@@ -49,18 +50,20 @@ def create_channels(guild, roles):
         }
         if all_channel_role:
             overwrites[all_channel_role] = discord.PermissionOverwrite(read_messages=True)
-        try:
+        if role.name.lower() not in channel_names:
             await guild.create_text_channel(role.name, overwrites=overwrites, category=category)
-        except discord.errors.HTTPException:
-            print(f"Failed to create channel for role {role.name}")
-    asyncio.gather(*[create_channel(role) for role in roles])
+        else:
+            print(f"Channel {role.name} already exists.")
+
+    for role in roles: # Gathering create channels got rate limited
+        await create_channel(role)
 
 
 @client.event
 async def on_ready():
     guild = client.get_guild(discord_tokens.active_server_id)
     roles = await get_roles(guild, get_role_names())
-    create_channels(guild, roles)
+    await create_channels(guild, roles, )
     await client.close()
 
 
