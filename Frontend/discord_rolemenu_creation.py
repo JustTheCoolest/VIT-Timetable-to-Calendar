@@ -35,19 +35,24 @@ async def get_roles(guild, role_names):
     return roles
 
 
+def get_channels_to_create(category, types):
+    channels = [channel.name for channel in category.channels]
+    filtered_channels = {}
+    for channel_type in types:
+        filtered_channels[channel_type] = []
+        for channel in channels:
+            if channel.type == channel_type:
+                filtered_channels[channel_type].append(channel)
+    return filtered_channels
+
+
 async def create_channels(guild, roles):
     all_channel_role = None
     if discord_tokens.all_channel_role:
         all_channel_role = guild.get_role(discord_tokens.all_channel_role)
     category = guild.get_channel(discord_tokens.category_id)
-    channels = category.channels
-    text_channels, announcement_channels, forum_channels = [], [], []
-    for channel_type, channel_list in zip([discord.ChannelType.text, discord.ChannelType.news,
-                                           discord.ChannelType.forum],
-                                          [text_channels, announcement_channels, forum_channels]):
-        for channel in channels:
-            if channel.type == channel_type:
-                channel_list.append(channel.name)
+    types = [discord.ChannelType.news, discord.ChannelType.forum]
+    filtered_channels = get_channels_to_create(category, types)
 
     async def create_channel(role, channel_list_and_creation_method_iterable):
         overwrites = {
