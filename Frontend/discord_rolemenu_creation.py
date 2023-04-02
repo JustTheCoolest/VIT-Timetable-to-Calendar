@@ -9,7 +9,7 @@ of the process where we create the channel, while allowing the other bot to hand
 """
 import discord
 from Backend import calendar_generator
-import discord_tokens
+import discord_tokens as discord_tokens
 
 """discord_tokens is a file that contains the following variables:
 bot_token, active_server_id, courses_text, category_id, all_channel_role"""
@@ -17,11 +17,11 @@ bot_token, active_server_id, courses_text, category_id, all_channel_role"""
 client = discord.Client(intents=discord.Intents.default())
 
 
-def get_role_names():
+def get_role_names() -> list[str]:
+    """Returns a list of course codes from the course data text in the tokens file (discord_tokens.courses_text)."""
     courses_text = discord_tokens.courses_text
     courses = calendar_generator.get_courses(courses_text)
     course_codes = list(courses.keys())
-    course_codes.sort()
     return course_codes
 
 
