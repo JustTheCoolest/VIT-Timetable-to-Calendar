@@ -53,8 +53,16 @@ async def create_channels(guild, roles):
     category = guild.get_channel(discord_tokens.category_id)
     types = [discord.ChannelType.news, discord.ChannelType.forum]
     filtered_channels = get_channels_to_create(category, types)
+    types = [discord.ChannelType.news, discord.ChannelType.forum]
+    filtered_channels = get_channels_to_create(category, types)
+    creation_function_wise_verification_list = {
+        lambda *args, **kwargs: guild.create_text_channel(*args, **kwargs, news=True):
+            filtered_channels[discord.ChannelType.news],
+        guild.create_forum:
+            filtered_channels[discord.ChannelType.forum]
+    }
 
-    async def create_channel(role, channel_list_and_creation_method_iterable):
+    async def create_channel(role, creation_function_wise_verification_list):
         overwrites = {
             guild.default_role: discord.PermissionOverwrite(read_messages=False),
             role: discord.PermissionOverwrite(read_messages=True)
@@ -62,16 +70,12 @@ async def create_channels(guild, roles):
         if all_channel_role:
             overwrites[all_channel_role] = discord.PermissionOverwrite(read_messages=True)
         role_name = role.name.lower()
-        for channel_list, creation_method in channel_list_and_creation_method_iterable:
-            if role_name not in channel_list:
-                await creation_method(role_name, overwrites=overwrites, category=category)
-            else:
-                print(f"{creation_method.__name__} channel {role_name} already exists.")
+        for creation_function, verification_list in creation_function_wise_verification_list.values():
+            if role_name not in verification_list:
+                await creation_function(role_name, overwrites=overwrites, category=category)
 
-    channel_list_and_creation_method_iterable = [(announcement_channels, guild.create_news_channel),
-                                                 (forum_channels, guild.create_category_channel)]
-    for role in roles:  # Gathering create channels got rate limited
-        await create_channel(role, channel_list_and_creation_method_iterable)
+    for role in roles:  # asyncio.gather got rate limited
+        await create_channel(role, creation_function_wise_verification_list)
 
 
 @client.event
