@@ -1,6 +1,9 @@
 import unittest
+
 from Backend import calendar_generator
 import datetime
+
+from Frontend import discord_tokens, discord_rolemenu_creation
 
 
 class TestCalendarGenerator(unittest.TestCase):
@@ -133,6 +136,18 @@ class TestCalendarGenerator(unittest.TestCase):
         )
         with open("WinterSemester2023sample.ics", "wb") as file:
             file.write(ics)
+
+
+class TestDiscordRolemenuCreation(unittest.TestCase):
+
+    def test_get_role_names(self):
+        with open('D:\Balu\Projects\VIT Timetable to Calendar\Testing\WinterSemester2023sample.txt') as text_source:
+            courses_text = text_source.read()
+        discord_tokens.courses_text = courses_text
+        self.assertEqual(
+            discord_rolemenu_creation.get_role_names(),
+            []
+        )
 
 
 if __name__ == '__main__':
