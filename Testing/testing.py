@@ -1,6 +1,7 @@
-import unittest
-from Backend import calendar_generator
 import datetime
+import unittest
+
+from Backend import calendar_generator
 
 
 class TestCalendarGenerator(unittest.TestCase):
@@ -133,6 +134,18 @@ class TestCalendarGenerator(unittest.TestCase):
         )
         with open("WinterSemester2023sample.ics", "wb") as file:
             file.write(ics)
+
+
+class FlexibilityTest(unittest.TestCase):
+    def test_flexibility(self):
+        with open("ics_without_dates.ics", "wb") as file:
+            file.write(calendar_generator.generate_calendar(
+                open("WinterSemester2023sample.txt").read(),
+                open("timetable_winter2023.txt").read(),
+                [
+                    datetime.datetime.now().date()
+                ]
+            ))
 
 
 if __name__ == '__main__':

@@ -107,7 +107,7 @@ def generate_calendar(
         courses_text: str,
         timetable_text: str,
         semester_dates: list[datetime.date]
-) -> str:
+) -> bytes:
     """
     semester_dates: End date is exclusive
     """
