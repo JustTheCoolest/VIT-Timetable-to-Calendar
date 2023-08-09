@@ -103,14 +103,25 @@ def add_events(
             calendar.add_component(event)
 
 
+def split_text(page_text: str) -> tuple[str, str]:
+    """
+    Splits the text copied from VTopCC >> Academics >> Time Table to,
+    courses_text, timetable_text
+    """
+    split_text = page_text.split("Total Number Of Credits:")
+    courses_text = split_text[0]
+    timetable_text = split_text[1][split_text[1].index("THEORY"):]
+    return courses_text, timetable_text
+
+
 def generate_calendar(
-        courses_text: str,
-        timetable_text: str,
+        page_text : str,
         semester_dates: list[datetime.date]
-) -> str:
+) -> bytes:
     """
     semester_dates: End date is exclusive
     """
+    courses_text, timetable_text = split_text(page_text)
     courses = get_courses(courses_text)
     calendar = icalendar.Calendar()
     calendar['prodid'] = '-// Andhavarapu Balu // github.com/JustTheCoolest/VIT-Chennai-Timetable-to-Calendar //EN'
@@ -120,5 +131,5 @@ def generate_calendar(
     theory_slot_timings = get_slot_times(rows[0][2:], rows[1][1:])
     add_events((row[2:] for row in rows[4::2]), theory_slot_timings, courses, semester_dates, calendar)
     lab_slot_timings = get_slot_times(rows[2][2:], rows[3][1:])
-    add_events((row[1:] for row in rows[5::2]), theory_slot_timings, courses, semester_dates, calendar)
+    add_events((row[1:] for row in rows[5::2]), lab_slot_timings, courses, semester_dates, calendar)
     return calendar.to_ical()
