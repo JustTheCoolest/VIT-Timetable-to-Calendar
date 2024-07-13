@@ -19,4 +19,8 @@ Converts the digital calendar given by the University in the student portal into
 
 ### ⚠️ Important note for Google Calendar imports:
 
-Create a new "calendar" and import this file into that, instead of importing directly to your default calendar in Google Calendar. Creating a new calendar for this will make it easy to delete it after the semester ends. Otherwise, you will have to delete each class of the week manually.
+Create a new "calendar" and import this file into that, instead of importing directly to your default calendar in Google Calendar. Creating a new calendar for this will make it easy to delete it after the semester ends. Otherwise, you will have to delete each class of the week manually. 
+
+Here is a video tutorial on how to import to Google Calendar: https://www.youtube.com/watch?v=gzahLrDPKv4
+
+Do not forget to change the "calendar" that you are importing the .ics file too, even after creating the new calendar.
