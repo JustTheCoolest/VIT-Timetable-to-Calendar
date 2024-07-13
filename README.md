@@ -16,3 +16,7 @@ Converts the digital calendar given by the University in the student portal into
 1) Copy paste the full page's text from VTop (VIT's portal) into a .txt file
 2) Run `Frontend/terminal_interface.py` and enter the required details
 3) Upload the given .ics output file to any calendar service you like
+
+### ⚠️ Important note for Google Calendar imports:
+
+Create a new "calendar" and import this file into that, instead of importing directly to your default calendar in Google Calendar. Creating a new calendar for this will make it easy to delete it after the semester ends. Otherwise, you will have to delete each class of the week manually.
