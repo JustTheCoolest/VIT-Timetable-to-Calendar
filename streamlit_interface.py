@@ -5,7 +5,9 @@ from Backend import calendar_generator
 
 def main():
     st.title("VIT Time Table to iCal Converter")
-
+    st.text("Made by Andhavarapu Balu")
+    st.markdown("[GitHub repository](https://github.com/JustTheCoolest/VIT-Timetable-to-Calendar)")
+    
     page_text = st.text_area("Paste the text copied from the page here:")
 
     if not page_text:
