@@ -4,6 +4,7 @@ from dateutil import rrule as dateutil_rrule
 
 
 days = ("MO", "TU", "WE", "TH", "FR", "SA", "SU")
+RECORD_SIZE = 32
 
 
 def get_courses(text: str) -> dict[str, dict]:
@@ -14,7 +15,7 @@ def get_courses(text: str) -> dict[str, dict]:
     data = text.splitlines()
     start_index = data.index('1')
     courses = {}
-    for line_index in range(start_index, len(data), 31):
+    for line_index in range(start_index, len(data), RECORD_SIZE):
         slot = data[line_index + 15][:-2]
         header = (data[line_index + 4].split(' - '))
         course_code = header[0]
