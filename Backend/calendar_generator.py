@@ -1,6 +1,7 @@
 import icalendar
 import datetime
 from dateutil import rrule as dateutil_rrule
+import re
 
 
 days = ("MO", "TU", "WE", "TH", "FR", "SA", "SU")
@@ -104,6 +105,10 @@ def add_events(
             calendar.add_component(event)
 
 
+def split_timetable_line(line):
+    return line.split('\t')
+
+
 def split_text(page_text: str) -> tuple[str, str]:
     """
     Splits the text copied from VTopCC >> Academics >> Time Table to,
@@ -128,7 +133,7 @@ def generate_calendar(
     calendar['prodid'] = '-// Andhavarapu Balu // github.com/JustTheCoolest/VIT-Chennai-Timetable-to-Calendar //EN'
     calendar['version'] = "2.0"
     calendar['x-wr-timezone'] = 'Asia/Kolkata'
-    rows = tuple(map(str.split, timetable_text.splitlines()))
+    rows = tuple(map(split_timetable_line, timetable_text.splitlines()))
     theory_slot_timings = get_slot_times(rows[0][2:], rows[1][1:])
     add_events((row[2:] for row in rows[4::2]), theory_slot_timings, courses, semester_dates, calendar)
     lab_slot_timings = get_slot_times(rows[2][2:], rows[3][1:])

@@ -1,41 +1,11 @@
+
 Sl.No	Class Group	Course	L T P J C	Category	Course Option	Class Nbr	Slot -
 Venue	Faculty Details	Registered / Updated Date & Time	Attendance Date - Type	Status & Ref No
 1
 
 General (Semester)
 
-BECE207L - Random Processes
-
-( Theory Only )
-
-2 1 0 0 3.0
-
-Discipline Core	
-Regular
-
-CH2024250100257
-
-F2+TF2 -
-
-
-AB2-403
-
-SANKAR GANESH -
-
-
-SENSE
-
-17-Jul-2024 16:46
-
-18-Jul-2024
-- Manual
-
-Registered and Approved
-2
-
-General (Semester)
-
-BECE303L - VLSI System Design
+BCSE204L - Design and Analysis of Algorithms
 
 ( Theory Only )
 
@@ -44,91 +14,94 @@ BECE303L - VLSI System Design
 Discipline Core	
 Regular
 
-CH2024250100281
+CH2024250101207
 
 D2+TD2 -
 
 
-AB2-403
+AB2-202
 
-MANIKANDAN P -
+UMMITY SRINIVASA RAO -
 
 
-CNVD
+SCOPE
 
-17-Jul-2024 16:49
+05-Jul-2024 12:03
 
-18-Jul-2024
+06-Jul-2024
 - Manual
 
 Registered and Approved
+
+2
+
+General (Semester)
+
+BCSE204P - Design and Analysis of Algorithms Lab
+
+( Lab Only )
+
+0 0 2 0 1.0
+
+Discipline Core	
+Regular
+
+CH2024250101218
+
+L27+L28 -
+
+
+AB1-404 A
+
+UMMITY SRINIVASA RAO -
+
+
+SCOPE
+
+05-Jul-2024 12:03
+
+06-Jul-2024
+- Manual
+
+Registered and Approved
+
 3
 
 General (Semester)
 
-BECE303P - VLSI System Design Lab
+BCSE301L - Software Engineering
 
-( Lab Only )
+( Theory Only )
 
-0 0 2 0 1.0
+3 0 0 0 3.0
 
 Discipline Core	
 Regular
 
-CH2024250100287
+CH2024250101321
 
-L7+L8 -
-
-
-AB3-312
-
-MANIKANDAN P -
+G2+TG2 -
 
 
-CNVD
+AB2-207
 
-17-Jul-2024 16:49
+SOFTYA SEBASTIAN -
 
-18-Jul-2024
+
+SCOPE
+
+05-Jul-2024 12:05
+
+06-Jul-2024
 - Manual
 
 Registered and Approved
+
 4
 
 General (Semester)
 
-BECE305L - Antenna and Microwave Engineering
-
-( Theory Only )
-
-3 0 0 0 3.0
-
-Discipline Core	
-Regular
-
-CH2024250100294
-
-A2+TA2 -
-
-
-AB2-404
-
-RICHARDS JOE STANISLAUS -
-
-
-SENSE
-
-17-Jul-2024 16:50
-
-18-Jul-2024
-- Manual
-
-Registered and Approved
-5
-
-General (Semester)
-
-BECE305P - Antenna and Microwave Engineering Lab
+BCSE301P - Software Engineering Lab
 
 ( Lab Only )
 
@@ -137,91 +110,94 @@ BECE305P - Antenna and Microwave Engineering Lab
 Discipline Core	
 Regular
 
-CH2024250100300
-
-L1+L2 -
-
-
-AB2-G02
-
-RICHARDS JOE STANISLAUS -
-
-
-SENSE
-
-17-Jul-2024 16:50
-
-18-Jul-2024
-- Manual
-
-Registered and Approved
-6
-
-General (Semester)
-
-BECE306L - Digital Communication Systems
-
-( Theory Only )
-
-3 0 0 0 3.0
-
-Discipline Core	
-Regular
-
-CH2024250100210
-
-E2+TE2 -
-
-
-AB2-404
-
-VETRIVELAN P -
-
-
-SENSE
-
-17-Jul-2024 16:52
-
-18-Jul-2024
-- Manual
-
-Registered and Approved
-7
-
-General (Semester)
-
-BECE306P - Digital Communication Systems Lab
-
-( Lab Only )
-
-0 0 2 0 1.0
-
-Discipline Core	
-Regular
-
-CH2024250100216
+CH2024250101333
 
 L21+L22 -
 
 
-AB1-505
+AB1-209
 
-VETRIVELAN P -
+SOFTYA SEBASTIAN -
 
 
-SENSE
+SCOPE
 
-17-Jul-2024 16:52
+05-Jul-2024 12:05
 
-18-Jul-2024
+06-Jul-2024
 - Manual
 
 Registered and Approved
-8
+
+5
 
 General (Semester)
 
-BECE355L - AWS for Cloud Computing
+BCSE306L - Artificial Intelligence
+
+( Theory Only )
+
+3 0 0 0 3.0
+
+Discipline Core	
+Regular
+
+CH2024250101178
+
+E2+TE2 -
+
+
+AB2-207
+
+KRITHIGA R -
+
+
+SCOPE
+
+05-Jul-2024 12:03
+
+06-Jul-2024
+- Manual
+
+Registered and Approved
+
+6
+
+General (Semester)
+
+BCSE315L - Wearable Computing
+
+( Theory Only )
+
+3 0 0 0 3.0
+
+Discipline Elective	
+Regular
+
+CH2024250101350
+
+B2+TB2 -
+
+
+AB2-203
+
+NOEL JEYGAR ROBERT V -
+
+
+SCOPE
+
+05-Jul-2024 12:06
+
+06-Jul-2024
+- Manual
+
+Registered and Approved
+
+7
+
+General (Semester)
+
+BCSE355L - AWS Solutions Architect
 
 ( Theory Only )
 
@@ -230,91 +206,62 @@ BECE355L - AWS for Cloud Computing
 Open Elective	
 Regular
 
-CH2024250101121
+CH2024250101133
 
-C2+TC2 -
-
-
-AB2-407
-
-SRITAMA ROY -
+F2+TF2 -
 
 
-SENSE
+AB2-201
 
-17-Jul-2024 16:54
+MAHESWARI S -
 
-18-Jul-2024
+
+SCOPE
+
+05-Jul-2024 12:01
+
+06-Jul-2024
 - Manual
 
 Registered and Approved
+
+8
+
+General (Semester)
+
+BMAT205L - Discrete Mathematics and Graph Theory
+
+( Theory Only )
+
+3 1 0 0 4.0
+
+Discipline-linked Engineering Sciences	
+Regular
+
+CH2024250102066
+
+C2+TC2+TCC2 -
+
+
+AB2-202
+
+AARTHY B -
+
+
+SAS
+
+05-Jul-2024 12:02
+
+06-Jul-2024
+- Manual
+
+Registered and Approved
+
 9
 
 General (Semester)
 
-BECE409E - Sensors Technology
-
-( Embedded Theory )
-
-2 0 0 0 2.0
-
-Discipline Elective	
-Regular
-
-CH2024250100309
-
-G2 -
-
-
-AB2-404
-
-ASHIS -
-
-
-SENSE
-
-18-Jul-2024 18:42
-
-19-Jul-2024
-- Manual
-
-Registered and Approved
-10
-
-General (Semester)
-
-BECE409E - Sensors Technology
-
-( Embedded Lab )
-
-0 0 2 0 1.0
-
-Discipline Elective	
-Regular
-
-CH2024250102737
-
-L47+L48 -
-
-
-AB1-606A
-
-ASHIS -
-
-
-SENSE
-
-18-Jul-2024 18:42
-
-19-Jul-2024
-- Manual
-
-Registered and Approved
-11
-
-General (Semester)
-
-BSSC101N - Essence of Traditional Knowledge
+BSSC102N - Indian Constitution
 
 ( Online Course )
 
@@ -323,29 +270,30 @@ BSSC101N - Essence of Traditional Knowledge
 Non-graded Core Requirement	
 Regular
 
-CH2024250102390
+CH2024250102405
 
 NIL -
 
 
 NIL
 
-JUSTIN JOSEPH -
+HARIKRISHNAN -
 
 
-SSL
+VITSOL
 
-05-Jul-2024 15:39
+05-Jul-2024 12:10
 
 06-Jul-2024
 - Manual
 
 Registered and Approved
-12
+
+10
 
 General (Semester)
 
-BSTS301P - Advanced Competitive Coding-I
+BSTS301P - Advanced Competitive Coding – I
 
 ( Soft Skill )
 
@@ -354,39 +302,72 @@ BSTS301P - Advanced Competitive Coding-I
 Open Elective	
 Regular
 
-CH2024250100135
+CH2024250100106
 
-B2+TB2 -
+A2+TA2 -
 
 
-AB2-403
+AB2-203
 
 ETHNUS (APT) -
 
 
 ACAD
 
-17-Jul-2024 17:00
+05-Jul-2024 12:19
 
-18-Jul-2024
+06-Jul-2024
 - Manual
 
 Registered and Approved
-Total Number Of Credits: 24.5
+
+11
+
+MOOC
+
+CFOC161M - Data Science for Engineers
+
+( Online Course )
+
+0 0 0 0 2.0
+
+Open Elective	
+Regular
+
+CH2024250104594
+
+NIL -
+
+
+NIL
+
+NITHYANANDAM P -
+
+
+SCOPE
+
+31-Aug-2024 19:44
+
+01-Sep-2024
+- Manual
+
+Registered and Approved
+
+Total Number Of Credits: 26.5
 THEORY	Start	08:00	08:55	09:50	10:45	11:40	12:35	Lunch	14:00	14:55	15:50	16:45	17:40	18:35
 End	08:50	09:45	10:40	11:35	12:30	13:25	Lunch	14:50	15:45	16:40	17:35	18:30	19:25
 LAB	Start	08:00	08:50	09:50	10:40	11:40	12:30	Lunch	14:00	14:50	15:50	16:40	17:40	18:30
 End	08:50	09:40	10:40	11:30	12:30	13:20	Lunch	14:50	15:40	16:40	17:30	18:30	19:20
-MON	THEORY	A1	F1	D1	TB1	TG1	S11	Lunch	A2-BECE305L-TH-AB2-404-ALL	F2-BECE207L-TH-AB2-403-ALL	D2-BECE303L-TH-AB2-403-ALL	TB2-BSTS301P-SS-AB2-403-ALL	TG2	S3
-LAB	L1-BECE305P-LO-AB2-G02-ALL	L2-BECE305P-LO-AB2-G02-ALL	L3	L4	L5	L6	Lunch	L31	L32	L33	L34	L35	L36
-TUE	THEORY	B1	G1	E1	TC1	TAA1	-	Lunch	B2-BSTS301P-SS-AB2-403-ALL	G2-BECE409E-ETH-AB2-404-ALL	E2-BECE306L-TH-AB2-404-ALL	TC2-BECE355L-TH-AB2-407-ALL	TAA2	S1
-LAB	L7-BECE303P-LO-AB3-312-ALL	L8-BECE303P-LO-AB3-312-ALL	L9	L10	L11	L12	Lunch	L37	L38	L39	L40	L41	L42
-WED	THEORY	C1	A1	F1	TD1	TBB1	-	Lunch	C2-BECE355L-TH-AB2-407-ALL	A2-BECE305L-TH-AB2-404-ALL	F2-BECE207L-TH-AB2-403-ALL	TD2-BECE303L-TH-AB2-403-ALL	TBB2	S4
-LAB	L13	L14	L15	L16	L17	L18	Lunch	L43	L44	L45	L46	L47-BECE409E-ELA-AB1-606A-ALL	L48-BECE409E-ELA-AB1-606A-ALL
-THU	THEORY	D1	B1	G1	TE1	TCC1	-	Lunch	D2-BECE303L-TH-AB2-403-ALL	B2-BSTS301P-SS-AB2-403-ALL	G2-BECE409E-ETH-AB2-404-ALL	TE2-BECE306L-TH-AB2-404-ALL	TCC2	S2
-LAB	L19	L20	L21-BECE306P-LO-AB1-505-ALL	L22-BECE306P-LO-AB1-505-ALL	L23	L24	Lunch	L49	L50	L51	L52	L53	L54
-FRI	THEORY	E1	C1	TA1	TF1	TDD1	S15	Lunch	E2-BECE306L-TH-AB2-404-ALL	C2-BECE355L-TH-AB2-407-ALL	TA2-BECE305L-TH-AB2-404-ALL	TF2-BECE207L-TH-AB2-403-ALL	TDD2	-
-LAB	L25	L26	L27	L28	L29	L30	Lunch	L55	L56	L57	L58	L59	L60
+MON	THEORY	A1	F1	D1	TB1	TG1	S11	Lunch	A2-BSTS301P-SS-AB2-203-ALL	F2-BCSE355L-TH-AB2-201-ALL	D2-BCSE204L-TH-AB2-202-ALL	TB2-BCSE315L-TH-AB2-203-ALL	TG2-BCSE301L-TH-AB2-207-ALL	S3
+LAB	L1	L2	L3	L4	L5	L6	Lunch	L31	L32	L33	L34	L35	L36
+TUE	THEORY	B1	G1	E1	TC1	TAA1	-	Lunch	B2-BCSE315L-TH-AB2-203-ALL	G2-BCSE301L-TH-AB2-207-ALL	E2-BCSE306L-TH-AB2-207-ALL	TC2-BMAT205L-TH-AB2-202-ALL	TAA2	S1
+LAB	L7	L8	L9	L10	L11	L12	Lunch	L37	L38	L39	L40	L41	L42
+WED	THEORY	C1	A1	F1	TD1	TBB1	-	Lunch	C2-BMAT205L-TH-AB2-202-ALL	A2-BSTS301P-SS-AB2-203-ALL	F2-BCSE355L-TH-AB2-201-ALL	TD2-BCSE204L-TH-AB2-202-ALL	TBB2	S4
+LAB	L13	L14	L15	L16	L17	L18	Lunch	L43	L44	L45	L46	L47	L48
+THU	THEORY	D1	B1	G1	TE1	TCC1	-	Lunch	D2-BCSE204L-TH-AB2-202-ALL	B2-BCSE315L-TH-AB2-203-ALL	G2-BCSE301L-TH-AB2-207-ALL	TE2-BCSE306L-TH-AB2-207-ALL	TCC2-BMAT205L-TH-AB2-202-ALL	S2
+LAB	L19	L20	L21-BCSE301P-LO-AB1-209-ALL	L22-BCSE301P-LO-AB1-209-ALL	L23	L24	Lunch	L49	L50	L51	L52	L53	L54
+FRI	THEORY	E1	C1	TA1	TF1	TDD1	S15	Lunch	E2-BCSE306L-TH-AB2-207-ALL	C2-BMAT205L-TH-AB2-202-ALL	TA2-BSTS301P-SS-AB2-203-ALL	TF2-BCSE355L-TH-AB2-201-ALL	TDD2	-
+LAB	L25	L26	L27-BCSE204P-LO-AB1-404 A-ALL	L28-BCSE204P-LO-AB1-404 A-ALL	L29	L30	Lunch	L55	L56	L57	L58	L59	L60
 SAT	THEORY	X11	X12	Y11	Y12	S8	S8	Lunch	X21	Z21	Y21	W21	W22	Z22
 LAB	L71	L72	L73	L74	L75	L76	Lunch	L77	L78	L79	L80	L81	L82
 SUN	THEORY	Y11	Y12	X11	X12	S10	S10	Lunch	Y21	Z21	X21	W21	W22	Z22
