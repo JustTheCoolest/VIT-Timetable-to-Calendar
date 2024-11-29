@@ -14,14 +14,9 @@ def main():
         return
 
     start_date = datetime.datetime.now().date()
-    try:
-        end_date = datetime.date.fromisoformat(st.text_area("Enter end date (YYYY-MM-DD): "))
-    except ValueError:
-        st.error("Invalid date format")
-        return
-
+    end_date = datetime.date(2025, 5, 31)
     ics_text = calendar_generator.generate_calendar(page_text, [start_date, end_date])
-
+    
     st.download_button(
         label="Download Calendar",
         data=ics_text,
