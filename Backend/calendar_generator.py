@@ -5,7 +5,7 @@ import re
 
 
 days = ("MO", "TU", "WE", "TH", "FR", "SA", "SU")
-RECORD_SIZE = 32
+RECORD_SIZE = 16
 
 
 def get_courses(text: str) -> dict[str, dict]:
@@ -14,19 +14,21 @@ def get_courses(text: str) -> dict[str, dict]:
     relevant data.
     """
     data = text.splitlines()
+    data = [x for x in data if x.strip()]
+    print('\n'.join(data))
     start_index = data.index('1')
     courses = {}
     for line_index in range(start_index, len(data), RECORD_SIZE):
-        slot = data[line_index + 15][:-2]
-        header = (data[line_index + 4].split(' - '))
+        slot = data[line_index + 7]
+        header = (data[line_index + 2].split(' - '))
         course_code = header[0]
         courses[course_code] = {
             'title': header[1],
-            'LTPJC': tuple(map(float, data[line_index + 8].split())),
-            'class_code': data[line_index + 13],
+            'LTPJC': tuple(map(float, data[line_index + 4].split())),
+            'class_code': data[line_index + 7],
             'slot': slot,
-            'venue': data[line_index + 18],
-            'professor': data[line_index + 20][:-2]
+            'venue': data[line_index + 9],
+            'professor': data[line_index + 10].rstrip(' -')
         }
     return courses
 
