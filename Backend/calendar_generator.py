@@ -5,7 +5,7 @@ import re
 
 
 days = ("MO", "TU", "WE", "TH", "FR", "SA", "SU")
-RECORD_SIZE = 17  # Adjusted to account for the correct number of lines per record
+RECORD_SIZE = 16  # Adjusted to account for the correct number of lines per record
 
 
 def get_courses(text: str) -> dict[str, dict]:
@@ -15,6 +15,7 @@ def get_courses(text: str) -> dict[str, dict]:
     """
     data = text.splitlines()
     data = [x for x in data if x.strip()]
+    print('\n'.join(data))
     start_index = data.index('1')
     courses = {}
     for line_index in range(start_index, len(data), RECORD_SIZE):
