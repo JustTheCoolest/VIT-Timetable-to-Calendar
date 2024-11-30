@@ -1,0 +1,237 @@
+Students are required to generate the invoice and then proceed to pay the required course fee. Registration is confirmed only if status of the course is 'Registered and Approved' (in regular cases) or 'Registered, Invoice Generated, Fees Paid and Approved' (when there is a requirement for course fee payment).
+
+Sl.No	Class Group	Course	L T P J C	Category	Course Option	Class Nbr	Slot -
+Venue	Faculty Details	Registered / Updated Date & Time	Attendance Date - Type	Status & Ref No
+1
+General (Semester)
+BCSE204L - Design and Analysis of Algorithms
+( Theory Only )
+3 0 0 0 3.0
+Discipline Core	
+Regular
+CH2024250101206
+D1+TD1 -
+AB2-202
+UMMITY SRINIVASA RAO -
+SCOPE
+05-Jul-2024 09:00
+06-Jul-2024
+- Manual
+Registered and Approved
+2
+General (Semester)
+BCSE204P - Design and Analysis of Algorithms Lab
+( Lab Only )
+0 0 2 0 1.0
+Discipline Core	
+Regular
+CH2024250101217
+L57+L58 -
+
+AB3-310
+UMMITY SRINIVASA RAO -
+
+SCOPE
+05-Jul-2024 09:00
+06-Jul-2024
+- Manual
+Registered and Approved
+3
+General (Semester)
+BCSE209L - Machine Learning
+( Theory Only )
+3 0 0 0 3.0
+Discipline Elective	
+Regular
+CH2024250101569
+B1+TB1 -
+
+AB3-303
+RENTA CHINTALA BHARGAVI -
+
+SCOPE
+05-Jul-2024 09:02
+06-Jul-2024
+- Manual
+Registered and Approved
+4
+General (Semester)
+BCSE209P - Machine Learning Lab
+( Lab Only )
+0 0 2 0 1.0
+Discipline Elective	
+Regular
+CH2024250101585
+L55+L56 -
+
+AB1-605B
+RENTA CHINTALA BHARGAVI -
+
+SCOPE
+05-Jul-2024 09:02
+06-Jul-2024
+- Manual
+Registered and Approved
+5
+General (Semester)
+BCSE301L - Software Engineering
+( Theory Only )
+3 0 0 0 3.0
+Discipline Core	
+Regular
+CH2024250101316
+G1+TG1 -
+
+AB2-205
+SMRITHY -
+
+SCOPE
+05-Jul-2024 09:01
+06-Jul-2024
+- Manual
+Registered and Approved
+6
+General (Semester)
+BCSE301P - Software Engineering Lab
+( Lab Only )
+0 0 2 0 1.0
+Discipline Core	
+Regular
+CH2024250101328
+L45+L46 -
+
+AB1-209
+SMRITHY -
+
+SCOPE
+05-Jul-2024 09:01
+06-Jul-2024
+- Manual
+Registered and Approved
+7
+General (Semester)
+BCSE306L - Artificial Intelligence
+( Theory Only )
+3 0 0 0 3.0
+Discipline Core	
+Regular
+CH2024250101165
+E1+TE1 -
+
+AB2-202
+MODIGARI NARENDRA -
+
+SCOPE
+05-Jul-2024 09:02
+06-Jul-2024
+- Manual
+Registered and Approved
+8
+General (Semester)
+BCSE355L - AWS Solutions Architect
+( Theory Only )
+3 0 0 0 3.0
+Open Elective	
+Regular
+CH2024250101130
+F1+TF1 -
+
+AB3-501
+MAHESWARI S -
+
+SCOPE
+05-Jul-2024 09:00
+06-Jul-2024
+- Manual
+Registered and Approved
+9
+General (Semester)
+BMAT205L - Discrete Mathematics and Graph Theory
+( Theory Only )
+3 1 0 0 4.0
+Discipline-linked Engineering Sciences	
+Regular
+CH2024250102064
+C1+TC1+TCC1 -
+
+AB2-204
+AARTHY B -
+
+SAS
+05-Jul-2024 09:01
+06-Jul-2024
+- Manual
+Registered and Approved
+10
+General (Semester)
+BSSC102N - Indian Constitution
+( Online Course )
+0 0 0 0 2.0
+Non-graded Core Requirement	
+Regular
+CH2024250102406
+NIL -
+
+NIL
+GOPIKA S GOPAN -
+
+VITSOL
+05-Jul-2024 20:20
+06-Jul-2024
+- Manual
+Registered and Approved
+11
+General (Semester)
+BSTS301P - Advanced Competitive Coding – I
+( Soft Skill )
+3 0 0 0 1.5
+Open Elective	
+Regular
+CH2024250100098
+A1+TA1 -
+
+AB2-201
+ETHNUS (APT) -
+
+ACAD
+27-Jun-2024 08:00
+28-Jun-2024
+- Manual
+Registered and Approved
+12
+MOOC
+CFOC549M - Introduction to Quantum Computing: Quantum Algorithms and Qiskit
+( Online Course )
+0 0 0 0 1.0
+Open Elective	
+Regular
+CH2024250104614
+NIL -
+
+NIL
+NITHYANANDAM P -
+
+SCOPE
+31-Aug-2024 20:38
+01-Sep-2024
+- Manual
+Registered and Approved
+Total Number Of Credits: 26.5
+THEORY	Start	08:00	08:55	09:50	10:45	11:40	12:35	Lunch	14:00	14:55	15:50	16:45	17:40	18:35
+End	08:50	09:45	10:40	11:35	12:30	13:25	Lunch	14:50	15:45	16:40	17:35	18:30	19:25
+LAB	Start	08:00	08:50	09:50	10:40	11:40	12:30	Lunch	14:00	14:50	15:50	16:40	17:40	18:30
+End	08:50	09:40	10:40	11:30	12:30	13:20	Lunch	14:50	15:40	16:40	17:30	18:30	19:20
+MON	THEORY	A1-BSTS301P-SS-AB2-201-ALL	F1-BCSE355L-TH-AB3-501-ALL	D1-BCSE204L-TH-AB2-202-ALL	TB1-BCSE209L-TH-AB3-303-ALL	TG1-BCSE301L-TH-AB2-205-ALL	S11	Lunch	A2	F2	D2	TB2	TG2	S3
+LAB	L1	L2	L3	L4	L5	L6	Lunch	L31	L32	L33	L34	L35	L36
+TUE	THEORY	B1-BCSE209L-TH-AB3-303-ALL	G1-BCSE301L-TH-AB2-205-ALL	E1-BCSE306L-TH-AB2-202-ALL	TC1-BMAT205L-TH-AB2-204-ALL	TAA1	-	Lunch	B2	G2	E2	TC2	TAA2	S1
+LAB	L7	L8	L9	L10	L11	L12	Lunch	L37	L38	L39	L40	L41	L42
+WED	THEORY	C1-BMAT205L-TH-AB2-204-ALL	A1-BSTS301P-SS-AB2-201-ALL	F1-BCSE355L-TH-AB3-501-ALL	TD1-BCSE204L-TH-AB2-202-ALL	TBB1	-	Lunch	C2	A2	F2	TD2	TBB2	S4
+LAB	L13	L14	L15	L16	L17	L18	Lunch	L43	L44	L45-BCSE301P-LO-AB1-209-ALL	L46-BCSE301P-LO-AB1-209-ALL	L47	L48
+THU	THEORY	D1-BCSE204L-TH-AB2-202-ALL	B1-BCSE209L-TH-AB3-303-ALL	G1-BCSE301L-TH-AB2-205-ALL	TE1-BCSE306L-TH-AB2-202-ALL	TCC1-BMAT205L-TH-AB2-204-ALL	-	Lunch	D2	B2	G2	TE2	TCC2	S2
+LAB	L19	L20	L21	L22	L23	L24	Lunch	L49	L50	L51	L52	L53	L54
+FRI	THEORY	E1-BCSE306L-TH-AB2-202-ALL	C1-BMAT205L-TH-AB2-204-ALL	TA1-BSTS301P-SS-AB2-201-ALL	TF1-BCSE355L-TH-AB3-501-ALL	TDD1	S15	Lunch	E2	C2	TA2	TF2	TDD2	-
+LAB	L25	L26	L27	L28	L29	L30	Lunch	L55-BCSE209P-LO-AB1-605B-ALL	L56-BCSE209P-LO-AB1-605B-ALL	L57-BCSE204P-LO-AB3-310-ALL	L58-BCSE204P-LO-AB3-310-ALL	L59	L60
+SAT	THEORY	X11	X12	Y11	Y12	S8	S8	Lunch	X21	Z21	Y21	W21	W22	Z22
+LAB	L71	L72	L73	L74	L75	L76	Lunch	L77	L78	L79	L80	L81	L82
+SUN	THEORY	Y11	Y12	X11	X12	S10	S10	Lunch	Y21	Z21	X21	W21	W22	Z22
+LAB	L83	L84	L85	L86	L87	L88	Lunch	L89	L90	L91	L92	L93	L94
