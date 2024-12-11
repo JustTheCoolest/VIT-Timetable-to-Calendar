@@ -13,7 +13,7 @@ def main():
     if not page_text:
         return
 
-    start_date = datetime.datetime.now().date()
+    start_date = (datetime.datetime.now() - datetime.timedelta(days=1)).date()
     end_date = datetime.date(2025, 5, 31)
     ics_text = calendar_generator.generate_calendar(page_text, [start_date, end_date])
     
