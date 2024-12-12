@@ -5,8 +5,30 @@ import re
 
 
 days = ("MO", "TU", "WE", "TH", "FR", "SA", "SU")
-RECORD_SIZE = 16
 
+
+RECORD_SIZE = 16
+SHIFTS = {
+    "REGISTRATION": 6,
+    "CLASS_NUMBER": 7,
+}
+
+
+def transform_arrear_course(data, line_index, lines_removed):
+    if data[line_index + SHIFTS["REGISTRATION"]].strip() != "Reregistered":
+        return 0
+    lines_removed.add(line_index + SHIFTS['CLASS_NUMBER'])
+    lines_removed.add(line_index + RECORD_SIZE)
+    return 2
+
+
+def transform_arrear_courses(data: list[str], start_index: int) -> list[str]:
+    lines_removed = set()
+    line_index = start_index
+    while line_index < len(data):
+        iterator_shift = transform_arrear_course(data, line_index, lines_removed)
+        line_index += RECORD_SIZE + iterator_shift
+    return [x for i, x in enumerate(data) if i not in lines_removed]
 
 def get_courses(text: str) -> dict[str, dict]:
     """
@@ -17,6 +39,7 @@ def get_courses(text: str) -> dict[str, dict]:
     data = [x for x in data if x.strip()]
     # print('\n'.join(data))
     start_index = data.index('1')
+    data = transform_arrear_courses(data, start_index)
     courses = {}
     for line_index in range(start_index, len(data), RECORD_SIZE):
         slot = data[line_index + 7]
