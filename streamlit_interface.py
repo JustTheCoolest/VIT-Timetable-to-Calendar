@@ -23,5 +23,10 @@ def main():
         file_name="calendar.ics",
         mime="text/calendar"
     )
+    
+    st.image("instructions/images/pg1 image.png")
+    st.image("instructions/images/pg2 image.png")
+    st.text("select all the text shown in the above images from SI.No to L94")
+    
 
 main()
