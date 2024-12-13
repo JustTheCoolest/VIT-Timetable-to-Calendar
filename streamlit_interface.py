@@ -9,9 +9,9 @@ def main():
     st.markdown("[GitHub repository](https://github.com/JustTheCoolest/VIT-Timetable-to-Calendar)")
 
     st.subheader("Instructions")
-    st.text("1. Copy all the text from your VTOP timetable page from SI.No to L94")
-    st.text("2. Paste the copied text in the section below and click Ctrl+Enter")
-    st.text("3. Download the .ics file and import it into your preferred calendar service")
+    st.text("1. Copy all the text from your VTOP timetable page from top to bottom (SI.No to L94)")
+    st.text("2. Paste the copied text in the section below and click outsite the box (or click Ctrl+Enter)")
+    st.text("3. Download the file (.ics) and import it into your preferred calendar service")
 
     st.markdown("""
 **Refer the video tutorials below for detailed instructions**\n

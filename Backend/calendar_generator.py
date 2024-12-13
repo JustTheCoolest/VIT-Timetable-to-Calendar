@@ -14,7 +14,7 @@ SHIFTS = {
 }
 
 
-def transform_arrear_course(data, line_index, lines_removed):
+def transform_arrear_course(data: list[str], line_index: int, lines_removed: set[int]) -> int:
     if data[line_index + SHIFTS["REGISTRATION"]].strip() != "Reregistered":
         return 0
     lines_removed.add(line_index + SHIFTS['CLASS_NUMBER'])
