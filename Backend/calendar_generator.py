@@ -12,10 +12,11 @@ SHIFTS = {
     "REGISTRATION": 6,
     "CLASS_NUMBER": 7,
 }
+ARREAR_NAMES = ("Reregistered", "Grade Improvement")
 
 
 def transform_arrear_course(data: list[str], line_index: int, lines_removed: set[int]) -> int:
-    if data[line_index + SHIFTS["REGISTRATION"]].strip() != "Reregistered":
+    if data[line_index + SHIFTS["REGISTRATION"]].strip() not in ARREAR_NAMES:
         return 0
     lines_removed.add(line_index + SHIFTS['CLASS_NUMBER'])
     lines_removed.add(line_index + RECORD_SIZE)
