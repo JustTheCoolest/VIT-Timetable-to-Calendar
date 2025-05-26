@@ -1,9 +1,24 @@
 import datetime
+import json
+
 import streamlit as st
+from google.cloud import firestore
+from google.oauth2 import service_account
 
 from Backend import calendar_generator
 
-def main():
+def get_firestore_downloads_doc_ref():
+    key_dict = json.loads(st.secrets["textkey"])
+    creds = service_account.Credentials.from_service_account_info(key_dict)
+    db = firestore.Client(credentials=creds)
+
+    # Create a reference to the Google post.
+    doc_ref = db.collection("siteStats").document("downloads")
+
+    return doc_ref
+
+
+def streamlit_stuff(downloads_doc_ref):
     st.title("VIT Time Table to iCal Converter")
     st.text("Made by Andhavarapu Balu")
     st.markdown("[GitHub repository](https://github.com/JustTheCoolest/VIT-Timetable-to-Calendar)")
@@ -33,12 +48,15 @@ def main():
         label="Download Calendar",
         data=ics_text,
         file_name="calendar.ics",
-        mime="text/calendar"
+        mime="text/calendar",
+        on_click=lambda: downloads_doc_ref.update({
+            "last_downloaded": datetime.datetime.now().isoformat(),
+            "download_count": firestore.Increment(1)
+        })
     )
 
-
-    
-
-    
+def main():
+    doc_ref = get_firestore_downloads_doc_ref()
+    streamlit_stuff(doc_ref)
 
 main()
