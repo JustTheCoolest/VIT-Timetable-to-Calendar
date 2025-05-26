@@ -35,7 +35,9 @@ def streamlit_stuff(downloads_doc_ref):
 """)
 
     page_text = st.text_area("Paste the text copied from the page here:")
-    
+
+    count_to_display = round(downloads_doc_ref.get().to_dict().get('download_count'), 1)
+    st.subheader(f"{count_to_display}+ downloads so far!")
 
     if not page_text:
         return
