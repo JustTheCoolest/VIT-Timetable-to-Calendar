@@ -65,12 +65,12 @@ def streamlit_stuff(downloads_doc_ref):
 
     page_text = st.text_area("Paste the text copied from the timetable page here:")
 
-    count_to_display = sigfig.round(downloads_doc_ref.get().to_dict().get('download_count'), sigfigs=1)
-    st.subheader(f"{count_to_display}+ downloads so far!")
-
     if page_text:
         provide_download(page_text, downloads_doc_ref)
 
+    count_to_display = sigfig.round(downloads_doc_ref.get().to_dict().get('download_count'), sigfigs=1)
+    st.subheader(f"{count_to_display}+ downloads so far!")
+    
     provide_samples_expander()
 
 def main():
