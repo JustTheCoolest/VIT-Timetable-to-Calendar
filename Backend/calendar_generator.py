@@ -100,7 +100,7 @@ def add_events(
     """Goes through the list of slots in the days and adds any classes found to the calendar as events"""
     for day_index, day_row in enumerate(day_rows):
         for slot_index, slot_cell in enumerate(day_row):
-            if "-" not in slot_cell or slot_cell == "-":
+            if "-" not in slot_cell or slot_cell.strip() in ("-", "--"):
                 continue
             slot_cell = slot_cell.split("-")
             slot_course = slot_cell[1]
