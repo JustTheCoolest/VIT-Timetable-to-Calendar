@@ -4,3 +4,5 @@ chumma.py
 vitical-firebase-adminsdk.json
 secrets.toml
 .streamlit/
+*:Zone.Identifier
+*.pyc

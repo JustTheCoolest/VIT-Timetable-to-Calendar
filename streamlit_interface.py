@@ -1,10 +1,12 @@
-import datetime
-import json
-import os
-
 import streamlit as st
 from google.cloud import firestore
 from google.oauth2 import service_account
+
+import sigfig
+
+import datetime
+import json
+import os
 
 from Backend import calendar_generator
 
@@ -63,7 +65,7 @@ def streamlit_stuff(downloads_doc_ref):
 
     page_text = st.text_area("Paste the text copied from the timetable page here:")
 
-    count_to_display = round(downloads_doc_ref.get().to_dict().get('download_count'), 1)
+    count_to_display = sigfig.round(downloads_doc_ref.get().to_dict().get('download_count'), sigfigs=1)
     st.subheader(f"{count_to_display}+ downloads so far!")
 
     if page_text:
