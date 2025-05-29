@@ -1,1 +1,5 @@
 icalendar
+streamlit
+google-cloud-firestore
+google-auth
+sigfig
