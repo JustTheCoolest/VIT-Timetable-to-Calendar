@@ -70,6 +70,9 @@ def get_slot_times(start_times: list[str], end_times: list[str]) -> list[(dateti
         for index, time in enumerate(times):
             if time == "Lunch":
                 continue
+            if time == "-":
+                times[index] = "-"
+                continue
             time_list = list(int(component) for component in time.split(":"))
             time = datetime.time(*time_list)
             if time < previous_time:
@@ -81,6 +84,9 @@ def get_slot_times(start_times: list[str], end_times: list[str]) -> list[(dateti
                 previous_time = time
             times[index] = time
     slot_times = list(zip(start_times, end_times))
+    for start_time, end_time in slot_times:
+        if start_time == "-" or end_time == "-":
+            assert start_time == end_time == "-"
     return slot_times
 
 
