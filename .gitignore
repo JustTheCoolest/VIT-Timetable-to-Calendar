@@ -1,7 +1,7 @@
 chumma.txt
 __pycache__/
 chumma.py
-vitical-firebase-adminsdk.json
-secrets.toml
+*-firebase-adminsdk.json
+*secrets.toml
 .streamlit/
 *:Zone.Identifier
