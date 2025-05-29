@@ -10,6 +10,7 @@ import os
 
 from Backend import calendar_generator
 
+@st.cache_resource
 def get_firestore_downloads_doc_ref():
     key_dict = json.loads(st.secrets["textkey"])
     creds = service_account.Credentials.from_service_account_info(key_dict)
@@ -19,6 +20,10 @@ def get_firestore_downloads_doc_ref():
     doc_ref = db.collection("siteStats").document("downloads")
 
     return doc_ref
+
+@st.cache_data(ttl = 600) # Cache for 10 minutes
+def get_downloads_count(_downloads_doc_ref):
+    return sigfig.round(_downloads_doc_ref.get().to_dict().get('download_count'), sigfigs=1)
 
 def provide_download(page_text, downloads_doc_ref):
     start_date = (datetime.datetime.now() - datetime.timedelta(days=1)).date()
@@ -68,7 +73,7 @@ def streamlit_stuff(downloads_doc_ref):
     if page_text:
         provide_download(page_text, downloads_doc_ref)
 
-    count_to_display = sigfig.round(downloads_doc_ref.get().to_dict().get('download_count'), sigfigs=1)
+    count_to_display = get_downloads_count(downloads_doc_ref)
     st.subheader(f"{count_to_display}+ downloads so far!")
     
     provide_samples_expander()
