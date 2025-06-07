@@ -88,13 +88,30 @@ def add_events(
         slot_timings: list[tuple[datetime.time]],
         courses: dict[str, dict],
         semester_dates: list[datetime.date],
-        calendar: icalendar.cal.Calendar
+        calendar: icalendar.cal.Calendar,
+	add_empty: bool = False
 ) -> None:
     """Goes through the list of slots in the days and adds any classes found to the calendar as events"""
     for day_index, day_row in enumerate(day_rows):
         for slot_index, slot_cell in enumerate(day_row):
             if "-" not in slot_cell or slot_cell == "-":
-                continue
+		if not add_empty:
+                	event = icalendar.Event()
+			event['summary'] = 'Free'
+			event['location'] = 'Free'
+			event['description'] = 'Free'
+			semester_start = semester_dates[0]
+			start_time, end_time = slot_timings[slot_index]
+			ical_time_format = '%Y%m%dT%H%M%S'
+			dtstart = datetime.datetime.combine(semester_start, start_time)
+			event['dtstart'] = dtstart.strftime(ical_time_format)
+			event['dtend'] = datetime.datetime.combine(semester_start, end_time).strftime(ical_time_format)
+			event['dtstamp'] = datetime.datetime.now().strftime(ical_time_format)
+			event['tzinfo'] = "Asia/Kolkata"
+			event['uid'] = str(day_index)+"-"+str(slot_index)
+			event['rrule'] = icalendar.vRecur(freq="WEEKLY", byday=days[day_index])
+			calendar.add_component(event)
+			continue
             slot_cell = slot_cell.split("-")
             slot_course = slot_cell[1]
             slot_venue = "-".join(slot_cell[3:5])
@@ -160,7 +177,7 @@ def generate_calendar(
     calendar['x-wr-timezone'] = 'Asia/Kolkata'
     rows = tuple(map(split_timetable_line, timetable_text.splitlines()))
     theory_slot_timings = get_slot_times(rows[0][2:], rows[1][1:])
-    add_events((row[2:] for row in rows[4::2]), theory_slot_timings, courses, semester_dates, calendar)
+    add_events((row[2:] for row in rows[4::2]), theory_slot_timings, courses, semester_dates, calendar, add_empty = True)
     lab_slot_timings = get_slot_times(rows[2][2:], rows[3][1:])
-    add_events((row[1:] for row in rows[5::2]), lab_slot_timings, courses, semester_dates, calendar)
+    add_events((row[1:] for row in rows[5::2]), lab_slot_timings, courses, semester_dates, calendar, add_empty = True)
     return calendar.to_ical()
