@@ -25,6 +25,20 @@ def get_firestore_downloads_doc_ref():
 def get_downloads_count(_downloads_doc_ref):
     return sigfig.round(_downloads_doc_ref.get().to_dict().get('download_count'), sigfigs=1)
 
+def provide_introduction_expander():
+    with st.expander("Introduction"):
+        st.text("""Import your semester timetable to any calendar application of your choice, such as Google Calendar, Apple Calendar, Microsoft Calendar, etc.
+ 
+Works on iOS!
+ 
+Reasons to use a calendar app:
+• All your events in a single place
+• Colour coding for different categories
+• Details custom category wise notification settings
+• Sync between all devices (including smart watches!)
+• Home screen widgets!
+""")
+
 def provide_download(page_text, downloads_doc_ref):
     start_date = (datetime.datetime.now() - datetime.timedelta(days=1)).date()
     end_date = datetime.date(2025, 5, 31)
@@ -51,20 +65,20 @@ def provide_samples_expander():
 
 def provide_instructions_expander():
     with st.expander("Instructions"):
-        st.text("1. Copy all the text from your VTOP timetable page from top to bottom (\"SI.No\" to \"L94\")")
-        st.text("2. Paste the copied text in the section below and click outside the box (or click Ctrl+Enter)")
-        st.text("3. Download the file (.ics) and import it into your preferred calendar service")
-
         st.markdown("""
-**Refer the video tutorials below for detailed instructions**\n
 [Google Calendar desktop tutorial](https://youtu.be/A3Rubu_3Le0?si=FA482m6ABF9n7szG)\n
 [iPadOS with Apple Calendar tutorial](https://youtu.be/dafPgd-1Z98)\n
 """)
+        st.text("1. Copy all the text from your VTOP timetable page from top to bottom (\"SI.No\" to \"L94\")")
+        st.text("2. Paste the copied text in the section below and click outside the box (or click Ctrl+Enter)")
+        st.text("3. Download the file (.ics) and import it into your preferred calendar service")
 
 def streamlit_stuff(downloads_doc_ref):
     st.title("VIT Time Table to iCal Converter")
     st.text("Made by Andhavarapu Balu")
     st.markdown("[GitHub repository](https://github.com/JustTheCoolest/VIT-Timetable-to-Calendar)")
+
+    provide_introduction_expander()
 
     provide_instructions_expander()
 
