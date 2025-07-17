@@ -19,7 +19,10 @@ def transform_arrear_course(data: list[str], line_index: int, lines_removed: set
     if data[line_index + SHIFTS["REGISTRATION"]].strip() not in ARREAR_NAMES:
         return 0
     lines_removed.add(line_index + SHIFTS['CLASS_NUMBER'])
-    lines_removed.add(line_index + RECORD_SIZE)
+    invoice_line = line_index + RECORD_SIZE
+    if "Invoice Not Generated" in data[invoice_line]:
+        return 1
+    lines_removed.add(invoice_line+1)
     return 2
 
 
@@ -31,16 +34,8 @@ def transform_arrear_courses(data: list[str], start_index: int) -> list[str]:
         line_index += RECORD_SIZE + iterator_shift
     return [x for i, x in enumerate(data) if i not in lines_removed]
 
-def get_courses(text: str) -> dict[str, dict]:
-    """
-    Converts the text copied from the course list in, VTopCC >> Academics >> Time Table, to a list of courses with the
-    relevant data.
-    """
-    data = text.splitlines()
-    data = [x for x in data if x.strip()]
-    # print('\n'.join(data))
-    start_index = data.index('1')
-    data = transform_arrear_courses(data, start_index)
+
+def get_courses_dict(start_index, data):
     courses = {}
     for line_index in range(start_index, len(data), RECORD_SIZE):
         slot = data[line_index + 7]
@@ -55,6 +50,19 @@ def get_courses(text: str) -> dict[str, dict]:
             'professor': data[line_index + 10].rstrip(' -')
         }
     return courses
+
+
+def get_courses(text: str) -> dict[str, dict]:
+    """
+    Converts the text copied from the course list in, VTopCC >> Academics >> Time Table, to a list of courses with the
+    relevant data.
+    """
+    data = text.splitlines()
+    data = [x for x in data if x.strip()]
+    # print('\n'.join(data))
+    start_index = data.index('1')
+    data = transform_arrear_courses(data, start_index)
+    return get_courses_dict(start_index, data)
 
 
 def get_slot_times(start_times: list[str], end_times: list[str]) -> list[(datetime.time, datetime.time)]:
