@@ -1,14 +1,19 @@
 import streamlit as st
+
+from google.cloud import firestore
+from google.oauth2 import service_account
+
+import sigfig
+
 import base64
+import datetime
+import json
 import os
 
 from Backend import calendar_generator
 
-from datetime import datetime
-
-# --------------------------- Custom CSS ---------------------------
 def add_custom_css():
-    background_image_path = "/home/harsha123/VIT-Timetable-to-Calendar-1/background.jpg"
+    background_image_path = "background.jpg"
     background_image_url = f"data:image/jpg;base64,{base64.b64encode(open(background_image_path, 'rb').read()).decode()}"
 
     st.markdown(f"""
@@ -213,7 +218,6 @@ def provide_samples_expander():
 
         st.markdown("</div>", unsafe_allow_html=True)
 
-# ---------------------- Instructions Expander ----------------------
 def provide_instructions_expander():
     with st.expander("📋 Instructions"):
         st.markdown("""
@@ -255,28 +259,17 @@ def streamlit_stuff(downloads_doc_ref):
 
     timetable_input = st.text_area("Paste your VIT timetable here:")
 
-    ics_data = None
-
     if st.button("Generate Calendar"):
         if timetable_input.strip() == "":
             st.error("❗ Please paste your timetable text.")
         else:
-            ics_data = generate_ics_from_timetable(timetable_input)
-            st.success("✅ Calendar file generated! Scroll down to download.")
-
-    if ics_data:
-        st.markdown("---")
-        st.markdown("### 📥 Download your Calendar File")
-        st.download_button(
-            label="Download .ics File",
-            data=ics_data,
-            file_name="vit_calendar.ics",
-            mime="text/calendar",
-            help="Click to download and import into your calendar"
-        )
+            provide_download(timetable_input, downloads_doc_ref)
 
     provide_samples_expander()
 
+def main():
+    doc_ref = get_firestore_downloads_doc_ref()
+    streamlit_stuff(doc_ref)
 
 if __name__ == "__main__":
     main()
