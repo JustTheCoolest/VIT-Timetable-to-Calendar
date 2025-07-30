@@ -1,9 +1,28 @@
 import streamlit as st
+
 import base64
 import os
 from datetime import datetime
 
-# --------------------------- Futuristic UI CSS ---------------------------
+from Backend import calendar_generator
+
+@st.cache_resource
+def get_firestore_downloads_doc_ref():
+    key_dict = json.loads(st.secrets["textkey"])
+    creds = service_account.Credentials.from_service_account_info(key_dict)
+    db = firestore.Client(credentials=creds)
+
+    # Create a reference to the Google post.
+    doc_ref = db.collection("siteStats").document("downloads")
+
+    return doc_ref
+
+@st.cache_data(ttl = 600) # Cache for 10 minutes
+def get_downloads_count(_downloads_doc_ref):
+    return sigfig.round(_downloads_doc_ref.get().to_dict().get('download_count'), sigfigs=1)
+
+
+
 def add_custom_css():
     background_image_path = "background.jpg"
     background_image_url = f"data:image/jpg;base64,{base64.b64encode(open(background_image_path, 'rb').read()).decode()}"
@@ -611,26 +630,49 @@ def add_custom_css():
     </style>
     """, unsafe_allow_html=True)
 
-# ---------------------- ICS Generator ----------------------
-def generate_ics_from_timetable(timetable_text):
-    lines = timetable_text.splitlines()
-    ics_content = "BEGIN:VCALENDAR\nVERSION:2.0\nCALSCAL:GREGORIAN\n"
-    for line in lines:
-        if line.strip() == "":
-            continue
-        dtstart = datetime.now().strftime('%Y%m%dT080000')
-        dtend = datetime.now().strftime('%Y%m%dT090000')
-        ics_content += (
-            "BEGIN:VEVENT\n"
-            f"SUMMARY:{line.strip()}\n"
-            f"DTSTART:{dtstart}\n"
-            f"DTEND:{dtend}\n"
-            "END:VEVENT\n"
-        )
-    ics_content += "END:VCALENDAR"
-    return ics_content
+def provide_introduction_expander():
+    with st.expander("Introduction"):
+        st.text("""Import your semester timetable to any calendar application of your choice, such as Google Calendar, Apple Calendar, Microsoft Calendar, etc.
+ 
+Works on iOS too!
+ 
+Reasons to use a calendar app:
+• All your events in a single place
+• Colour coding for different categories
+• Details custom category wise notification settings
+• Sync between all devices (including smart watches!)
+• Home screen widgets!
+""")
 
-# ---------------------- Use Case Screenshots ----------------------
+
+
+
+def provide_download(page_text, downloads_doc_ref):
+    start_date = (datetime.datetime.now() - datetime.timedelta(days=1)).date()
+    end_date = datetime.date(2025, 5, 31)
+    ics_text = calendar_generator.generate_calendar(page_text, [start_date, end_date])
+
+    st.markdown("""
+            <div class="success-alert">
+                <i class="fas fa-check-circle"></i> 
+                SUCCESS: Calendar file generated! Download initiated.
+            </div>
+            """, unsafe_allow_html=True)
+
+    st.markdown('<div class="cyber-divider"></div>', unsafe_allow_html=True)
+    st.markdown("### 📡 *DOWNLOAD TRANSMISSION*")
+    st.download_button(
+        label="⬇ DOWNLOAD CALENDAR FILE",
+        data=ics_data,
+        file_name="vit_cyber_calendar.ics",
+        mime="text/calendar",
+        help="Download your generated calendar file",
+        on_click=lambda: downloads_doc_ref.update({
+            "last_downloaded": datetime.datetime.now().isoformat(),
+            "download_count": firestore.Increment(1)
+        })
+    )
+
 def provide_samples_expander():
     valid_extensions = ('.png', '.jpg', '.jpeg', '.gif')
     folder = "sample_screenshots"
@@ -658,10 +700,15 @@ def provide_samples_expander():
 
         st.markdown("</div>", unsafe_allow_html=True)
 
-# ---------------------- Instructions Expander ----------------------
 def provide_instructions_expander():
     with st.expander("⚡ Quick Start Guide"):
         st.markdown("""
+        ### 📡 *Video Transmissions*
+        
+        *🖥 [Desktop Calendar Integration](https://youtu.be/A3Rubu_3Le0?si=FA482m6ABF9n7szG)*
+        
+        *📱 [Mobile Device Setup](https://youtu.be/dafPgd-1Z98)*
+
         ### 🚀 *Launch Sequence*
         
         *◆ Step 1:* Navigate to your VTOP timetable and copy ALL text from "SI.No" to "L94"
@@ -672,38 +719,16 @@ def provide_instructions_expander():
         
         *◆ Step 4:* Download the .ics file and import into your calendar app
         
-        ---
-        
-        ### 📡 *Video Transmissions*
-        
-        *🖥 [Desktop Calendar Integration](https://youtu.be/A3Rubu_3Le0?si=FA482m6ABF9n7szG)*
-        
-        *📱 [Mobile Device Setup](https://youtu.be/dafPgd-1Z98)*
         """)
 
-# ---------------------- Main App UI ----------------------
-def main():
-    add_custom_css()
 
-    # Cyber Header
-    st.markdown("""
-    <div class="cyber-header">
-        <div class="cyber-nav">
-            <div class="nav-brand">
-                <i class="fas fa-satellite-dish"></i> VIT CALENDAR
-            </div>
-            <div class="nav-links">
-                <a href="https://github.com/andhanarapu-balu" target="_blank">
-                    <i class="fab fa-github"></i> SOURCE CODE
-                </a>
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
 
-    st.markdown("<h1><i class='fas fa-rocket'></i> TIMETABLE CONVERTER</h1>", unsafe_allow_html=True)
-    st.markdown("<div class='author-credit'>⚡ ENGINEERED BY ANDHANARAPU BALU ⚡</div>", unsafe_allow_html=True)
+def streamlit_stuff(downloads_doc_ref):
+    st.title("VIT Time Table to iCal Converter")
+    st.text("Made by Andhavarapu Balu")
+    st.markdown("[GitHub repository](https://github.com/JustTheCoolest/VIT-Timetable-to-Calendar)")
 
+    provide_introduction_expander()
     provide_instructions_expander()
 
     timetable_input = st.text_area(
@@ -723,26 +748,16 @@ def main():
             </div>
             """, unsafe_allow_html=True)
         else:
-            ics_data = generate_ics_from_timetable(timetable_input)
-            st.markdown("""
-            <div class="success-alert">
-                <i class="fas fa-check-circle"></i> 
-                SUCCESS: Calendar file generated! Download initiated.
-            </div>
-            """, unsafe_allow_html=True)
+            provide_download(timetable_input, downloads_doc_ref)
 
-    if ics_data:
-        st.markdown('<div class="cyber-divider"></div>', unsafe_allow_html=True)
-        st.markdown("### 📡 *DOWNLOAD TRANSMISSION*")
-        st.download_button(
-            label="⬇ DOWNLOAD CALENDAR FILE",
-            data=ics_data,
-            file_name="vit_cyber_calendar.ics",
-            mime="text/calendar",
-            help="Download your generated calendar file"
-        )
+    count_to_display = get_downloads_count(downloads_doc_ref)
+    st.subheader(f"{count_to_display}+ downloads so far!")
 
     provide_samples_expander()
+
+def main():
+    doc_ref = get_firestore_downloads_doc_ref()
+    streamlit_stuff(doc_ref)
 
 if __name__ == "__main__":
     main()
