@@ -1,8 +1,13 @@
 import streamlit as st
+from google.cloud import firestore
+from google.oauth2 import service_account
 
-import base64
+import sigfig
+
+import datetime
+import json
 import os
-from datetime import datetime
+import base64
 
 from Backend import calendar_generator
 
@@ -724,9 +729,26 @@ def provide_instructions_expander():
 
 
 def streamlit_stuff(downloads_doc_ref):
-    st.title("VIT Time Table to iCal Converter")
-    st.text("Made by Andhavarapu Balu")
-    st.markdown("[GitHub repository](https://github.com/JustTheCoolest/VIT-Timetable-to-Calendar)")
+    add_custom_css()
+
+    # Cyber Header
+    st.markdown("""
+    <div class="cyber-header">
+        <div class="cyber-nav">
+            <div class="nav-brand">
+                <i class="fas fa-satellite-dish"></i> VIT CALENDAR
+            </div>
+            <div class="nav-links">
+                <a href="https://github.com/andhanarapu-balu" target="_blank">
+                    <i class="fab fa-github"></i> SOURCE CODE
+                </a>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("<h1><i class='fas fa-rocket'></i> TIMETABLE CONVERTER</h1>", unsafe_allow_html=True)
+    st.markdown("<div class='author-credit'>⚡ ENGINEERED BY ANDHANARAPU BALU ⚡</div>", unsafe_allow_html=True)
 
     provide_introduction_expander()
     provide_instructions_expander()
