@@ -169,18 +169,38 @@ def streamlit_stuff(downloads_doc_ref):
         if st.button("⚡ GENERATE CALENDAR"):
             if timetable_input.strip() == "":
                 st.markdown("""
-                <div class="error-alert">
-                    <i class="fas fa-exclamation-triangle"></i> 
-                    ERROR: No timetable data detected. Please input your schedule data.
-                </div>
+                    <div class="error-alert">
+                        <i class="fas fa-exclamation-triangle"></i> 
+                        ERROR: No timetable data detected. Please input your schedule data.
+                    </div>
                 """, unsafe_allow_html=True)
             else:
-                # Generate and store download content
-                ics_text = calendar_generator.generate_calendar(
-                    timetable_input,
-                    [datetime.datetime.now().date(), datetime.date(2025, 5, 31)]
-                )
-                st.session_state["ics_text"] = ics_text  # Store in session state
+                try:
+                    # Attempt to generate the calendar
+                    start_date = datetime.datetime.now().date()
+                    end_date = datetime.date(2025, 5, 31)
+                    ics_text = calendar_generator.generate_calendar(timetable_input, [start_date, end_date])
+                    
+                    # Store in session state
+                    st.session_state["ics_text"] = ics_text
+                    
+                    st.markdown("""
+                        <div class="success-alert">
+                            <i class="fas fa-check-circle"></i> 
+                            SUCCESS: Calendar file generated!
+                        </div>
+                    """, unsafe_allow_html=True)
+
+                except Exception as e:
+                    # Show error if date parsing or formatting fails
+                    st.markdown(f"""
+                        <div class="error-alert">
+                            <i class="fas fa-exclamation-triangle"></i> 
+                            ERROR: Failed to generate calendar. Ensure your timetable contains a valid start date and correct datetime format.<br>
+                            <code>{str(e)}</code>
+                        </div>
+                    """, unsafe_allow_html=True)
+
 
     with col2:
         if "ics_text" in st.session_state:
