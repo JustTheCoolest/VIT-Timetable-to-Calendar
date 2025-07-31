@@ -72,7 +72,7 @@ def provide_download(page_text, downloads_doc_ref):
     st.markdown("### 📡 *DOWNLOAD TRANSMISSION*")
     st.download_button(
         label="⬇ DOWNLOAD CALENDAR FILE",
-        data=ics_data,
+        data=ics_text,
         file_name="vit_cyber_calendar.ics",
         mime="text/calendar",
         help="Download your generated calendar file",
@@ -163,23 +163,39 @@ def streamlit_stuff(downloads_doc_ref):
         height=200
     )
 
-    ics_data = None
+    col1, col2 = st.columns([1, 1])  # Adjust width ratio as needed
 
-    if st.button("⚡ GENERATE CALENDAR"):
-        if timetable_input.strip() == "":
-            st.markdown("""
-            <div class="error-alert">
-                <i class="fas fa-exclamation-triangle"></i> 
-                ERROR: No timetable data detected. Please input your schedule data.
-            </div>
-            """, unsafe_allow_html=True)
-        else:
-            provide_download(timetable_input, downloads_doc_ref)
+    with col1:
+        if st.button("⚡ GENERATE CALENDAR"):
+            if timetable_input.strip() == "":
+                st.markdown("""
+                <div class="error-alert">
+                    <i class="fas fa-exclamation-triangle"></i> 
+                    ERROR: No timetable data detected. Please input your schedule data.
+                </div>
+                """, unsafe_allow_html=True)
+            else:
+                # Generate and store download content
+                ics_text = calendar_generator.generate_calendar(
+                    timetable_input,
+                    [datetime.datetime.now().date(), datetime.date(2025, 5, 31)]
+                )
+                st.session_state["ics_text"] = ics_text  # Store in session state
+
+    with col2:
+        if "ics_text" in st.session_state:
+            st.download_button(
+                label="📥 Download Calendar",
+                data=st.session_state["ics_text"],
+                file_name="calendar.ics",
+                mime="text/calendar"
+            )
 
     count_to_display = get_downloads_count(downloads_doc_ref)
     st.subheader(f"{count_to_display}+ downloads so far!")
 
     provide_samples_expander()
+
 
 def main():
     doc_ref = get_firestore_downloads_doc_ref()
