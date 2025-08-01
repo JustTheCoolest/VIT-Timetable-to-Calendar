@@ -143,7 +143,7 @@ def streamlit_stuff(downloads_doc_ref):
                 <i class="fas fa-satellite-dish"></i> VIT CALENDAR
             </div>
             <div class="nav-links">
-                <a href="https://github.com/andhanarapu-balu" target="_blank">
+                <a href="https://github.com/JustTheCoolest/VIT-Timetable-to-Calendar" target="_blank">
                     <i class="fab fa-github"></i> SOURCE CODE
                 </a>
             </div>
@@ -152,7 +152,7 @@ def streamlit_stuff(downloads_doc_ref):
     """, unsafe_allow_html=True)
 
     st.markdown("<h1><i class='fas fa-rocket'></i> TIMETABLE CONVERTER</h1>", unsafe_allow_html=True)
-    st.markdown("<div class='author-credit'>⚡ ENGINEERED BY ANDHANARAPU BALU ⚡</div>", unsafe_allow_html=True)
+    st.markdown("<div class='author-credit'>⚡ Engineered by ANDHANARAPU BALU and HARSHA DATTA⚡</div>", unsafe_allow_html=True)
 
     provide_introduction_expander()
     provide_instructions_expander()
