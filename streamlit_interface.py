@@ -163,43 +163,30 @@ def streamlit_stuff(downloads_doc_ref):
         height=200
     )
 
-    col1, col2 = st.columns([1, 1])  # Adjust width ratio as needed
+    col1, col2 = st.columns([1, 1])  
 
     with col1:
         if st.button("⚡ GENERATE CALENDAR"):
             if timetable_input.strip() == "":
-                st.markdown("""
-                    <div class="error-alert">
-                        <i class="fas fa-exclamation-triangle"></i> 
-                        ERROR: No timetable data detected. Please input your schedule data.
-                    </div>
-                """, unsafe_allow_html=True)
+                st.components.v1.html("""
+                    <script>
+                        alert("❌ ERROR: No timetable data detected. Please input your schedule data.");
+                    </script>
+                """, height=0)
             else:
                 try:
-                    # Attempt to generate the calendar
                     start_date = datetime.datetime.now().date()
                     end_date = datetime.date(2025, 5, 31)
                     ics_text = calendar_generator.generate_calendar(timetable_input, [start_date, end_date])
                     
-                    # Store in session state
                     st.session_state["ics_text"] = ics_text
-                    
-                    st.markdown("""
-                        <div class="success-alert">
-                            <i class="fas fa-check-circle"></i> 
-                            SUCCESS: Calendar file generated!
-                        </div>
-                    """, unsafe_allow_html=True)
 
                 except Exception as e:
-                    # Show error if date parsing or formatting fails
-                    st.markdown(f"""
-                        <div class="error-alert">
-                            <i class="fas fa-exclamation-triangle"></i> 
-                            ERROR: Failed to generate calendar. Ensure your timetable contains a valid start date and correct datetime format.<br>
-                            <code>{str(e)}</code>
-                        </div>
-                    """, unsafe_allow_html=True)
+                    st.components.v1.html(f"""
+                        <script>
+                            alert("❌ ERROR: Failed to generate calendar. The format might be incorrect. Please paste your timetable from VTOP. Refer to the video guide in the instructions dropdown on the website.\\n\\nError details: {str(e)}");
+                        </script>
+                    """, height=0)
 
 
     with col2:
