@@ -40,7 +40,7 @@ def add_custom_css():
 
 
 def provide_introduction_expander():
-    with st.expander("Introduction"):
+    with st.expander("⚡ Introduction"):
         st.text("""Import your semester timetable to any calendar application of your choice, such as Google Calendar, Apple Calendar, Microsoft Calendar, etc.
  
 Works on iOS too!
