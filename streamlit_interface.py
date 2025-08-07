@@ -54,34 +54,61 @@ Reasons to use a calendar app:
 • Home screen widgets!
 """)
 
-
-
-
-def provide_download(page_text, downloads_doc_ref):
+def generate_calender(page_text):
     start_date = (datetime.datetime.now() - datetime.timedelta(days=1)).date()
     end_date = datetime.date(2025, 5, 31)
     ics_text = calendar_generator.generate_calendar(page_text, [start_date, end_date])
+    return ics_text
 
-    st.markdown("""
-            <div class="success-alert">
-                <i class="fas fa-check-circle"></i> 
-                SUCCESS: Calendar file generated! Download initiated.
-            </div>
-            """, unsafe_allow_html=True)
 
-    st.markdown('<div class="cyber-divider"></div>', unsafe_allow_html=True)
-    st.markdown("### 📡 *DOWNLOAD TRANSMISSION*")
-    st.download_button(
-        label="⬇ DOWNLOAD CALENDAR FILE",
-        data=ics_text,
-        file_name="vit_cyber_calendar.ics",
-        mime="text/calendar",
-        help="Download your generated calendar file",
-        on_click=lambda: downloads_doc_ref.update({
-            "last_downloaded": datetime.datetime.now().isoformat(),
-            "download_count": firestore.Increment(1)
-        })
-    )
+
+def provide_download(downloads_doc_ref):
+    ics_text=None
+    timetable_input = st.text_area(
+                        "🎯 INPUT YOUR TIMETABLE DATA:",
+                        placeholder="Paste your complete VTOP timetable here... System ready for data input.",
+                        height=200
+                    )
+
+    col1, col2 = st.columns([1, 1])  
+
+    with col1:
+        if st.button("⚡ GENERATE CALENDAR"):
+            if timetable_input.strip() == "":
+                st.components.v1.html("""
+                    <script>
+                        alert("❌ ERROR: No timetable data detected. Please input your schedule data.");
+                    </script>
+                """, height=0)
+            else:
+                try:
+                    ics_text=generate_calender(timetable_input)
+                except Exception as e:
+                    print(traceback.format_exc())
+                    st.components.v1.html(f"""
+                        <script>
+                            alert("❌ ERROR: Failed to generate calendar. The format might be incorrect. Please paste your timetable from VTOP. Refer to the video guide in the instructions dropdown on the website.\\n\\nError details: {str(e)}");
+                        </script>
+                    """, height=0)
+
+    st.markdown("### 💬 Help us improve!")
+    st.markdown("If you're consistently facing issues, please report the error so we can assist:")
+    st.link_button("📝 Report Issue", "https://forms.gle/your-google-form-id")
+
+
+
+    with col2:
+        if "ics_text" in st.session_state:
+            st.download_button(
+                label="📥 Download Calendar",
+                data=ics_text,
+                file_name="calendar.ics",
+                mime="text/calendar",
+                on_click=lambda: downloads_doc_ref.update({
+                    "last_downloaded": datetime.datetime.now().isoformat(),
+                    "download_count": firestore.Increment(1)
+                })
+            )
 
 def provide_samples_expander():
     valid_extensions = ('.png', '.jpg', '.jpeg', '.gif')
@@ -157,54 +184,7 @@ def streamlit_stuff(downloads_doc_ref):
 
     provide_introduction_expander()
     provide_instructions_expander()
-
-    timetable_input = st.text_area(
-        "🎯 INPUT YOUR TIMETABLE DATA:",
-        placeholder="Paste your complete VTOP timetable here... System ready for data input.",
-        height=200
-    )
-
-    col1, col2 = st.columns([1, 1])  
-
-    with col1:
-        if st.button("⚡ GENERATE CALENDAR"):
-            if timetable_input.strip() == "":
-                st.components.v1.html("""
-                    <script>
-                        alert("❌ ERROR: No timetable data detected. Please input your schedule data.");
-                    </script>
-                """, height=0)
-            else:
-                try:
-                    start_date = datetime.datetime.now().date()
-                    end_date = datetime.date(2025, 5, 31)
-                    ics_text = calendar_generator.generate_calendar(timetable_input, [start_date, end_date])
-                    st.session_state["ics_text"] = ics_text
-                    st.session_state["calendar_error"] = False  
-                except Exception as e:
-                    print(traceback.format_exc())
-                    st.session_state["calendar_error"] = True  
-
-                    st.components.v1.html(f"""
-                        <script>
-                            alert("❌ ERROR: Failed to generate calendar. The format might be incorrect. Please paste your timetable from VTOP. Refer to the video guide in the instructions dropdown on the website.\\n\\nError details: {str(e)}");
-                        </script>
-                    """, height=0)
-
-                if st.session_state.get("calendar_error", False):
-                    st.markdown("### 💬 Help us improve!")
-                    st.markdown("If you're consistently facing issues, please report the error so we can assist:")
-                    st.link_button("📝 Report Issue", "https://forms.gle/your-google-form-id")
-
-    with col2:
-        if "ics_text" in st.session_state:
-            st.download_button(
-                label="📥 Download Calendar",
-                data=st.session_state["ics_text"],
-                file_name="calendar.ics",
-                mime="text/calendar"
-            )
-
+    provide_download(downloads_doc_ref)
     count_to_display = get_downloads_count(downloads_doc_ref)
     st.subheader(f"{count_to_display}+ downloads so far!")
 
