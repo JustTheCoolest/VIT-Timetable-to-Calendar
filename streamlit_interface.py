@@ -8,6 +8,7 @@ import datetime
 import json
 import os
 import base64
+import traceback
 
 from Backend import calendar_generator
 
@@ -178,16 +179,22 @@ def streamlit_stuff(downloads_doc_ref):
                     start_date = datetime.datetime.now().date()
                     end_date = datetime.date(2025, 5, 31)
                     ics_text = calendar_generator.generate_calendar(timetable_input, [start_date, end_date])
-                    
                     st.session_state["ics_text"] = ics_text
-
+                    st.session_state["calendar_error"] = False  
                 except Exception as e:
+                    print(traceback.format_exc())
+                    st.session_state["calendar_error"] = True  
+
                     st.components.v1.html(f"""
                         <script>
                             alert("❌ ERROR: Failed to generate calendar. The format might be incorrect. Please paste your timetable from VTOP. Refer to the video guide in the instructions dropdown on the website.\\n\\nError details: {str(e)}");
                         </script>
                     """, height=0)
 
+                if st.session_state.get("calendar_error", False):
+                    st.markdown("### 💬 Help us improve!")
+                    st.markdown("If you're consistently facing issues, please report the error so we can assist:")
+                    st.link_button("📝 Report Issue", "https://forms.gle/your-google-form-id")
 
     with col2:
         if "ics_text" in st.session_state:
