@@ -104,7 +104,8 @@ def provide_samples_expander():
                 for ext in valid_extensions:
                     caption = caption.replace(ext, '')
                 caption = caption.strip().title()
-                st.image(f"{folder}/{sample}", caption=f"{i+1}. {caption}")
+                st.markdown(f"**{caption}**")
+                st.image(f"{folder}/{sample}")
             except Exception as e:
                 st.error(f"Error loading image {sample}: {str(e)}")
 
