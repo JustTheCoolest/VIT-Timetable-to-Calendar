@@ -60,8 +60,6 @@ def generate_calender(page_text):
     ics_text = calendar_generator.generate_calendar(page_text, [start_date, end_date])
     return ics_text
 
-
-
 def provide_download(downloads_doc_ref):
     ics_text=None
     timetable_input = st.text_area(
@@ -83,6 +81,7 @@ def provide_download(downloads_doc_ref):
             else:
                 try:
                     ics_text=generate_calender(timetable_input)
+                    st.session_state["ics_text"] = ics_text
                 except Exception as e:
                     print(traceback.format_exc())
                     st.components.v1.html(f"""
@@ -90,12 +89,6 @@ def provide_download(downloads_doc_ref):
                             alert("❌ ERROR: Failed to generate calendar. The format might be incorrect. Please paste your timetable from VTOP. Refer to the video guide in the instructions dropdown on the website.\\n\\nError details: {str(e)}");
                         </script>
                     """, height=0)
-
-    st.markdown("### 💬 Help us improve!")
-    st.markdown("If you're consistently facing issues, please report the error so we can assist:")
-    st.link_button("📝 Report Issue", "https://forms.gle/your-google-form-id")
-
-
 
     with col2:
         if "ics_text" in st.session_state:
@@ -109,6 +102,9 @@ def provide_download(downloads_doc_ref):
                     "download_count": firestore.Increment(1)
                 })
             )
+
+def provide_report_option():
+    st.link_button("📝 Report Issue / Give Feedback", "https://forms.gle/your-google-form-id")
 
 def provide_samples_expander():
     valid_extensions = ('.png', '.jpg', '.jpeg', '.gif')
@@ -158,8 +154,6 @@ def provide_instructions_expander():
         
         """)
 
-
-
 def streamlit_stuff(downloads_doc_ref):
     add_custom_css()
 
@@ -180,16 +174,18 @@ def streamlit_stuff(downloads_doc_ref):
     """, unsafe_allow_html=True)
 
     st.markdown("<h1><i class='fas fa-rocket'></i> TIMETABLE CONVERTER</h1>", unsafe_allow_html=True)
-    st.markdown("<div class='author-credit'>⚡ Engineered by ANDHANARAPU BALU and HARSHA DATTA⚡</div>", unsafe_allow_html=True)
+    st.markdown("<div class='author-credit'>⚡ Engineered by ANDHAVARAPU BALU and HARSHA DATTA⚡</div>", unsafe_allow_html=True)
 
     provide_introduction_expander()
     provide_instructions_expander()
     provide_download(downloads_doc_ref)
+
     count_to_display = get_downloads_count(downloads_doc_ref)
     st.subheader(f"{count_to_display}+ downloads so far!")
 
     provide_samples_expander()
 
+    provide_report_option()
 
 def main():
     doc_ref = get_firestore_downloads_doc_ref()
