@@ -6,3 +6,4 @@ chumma.py
 .streamlit/
 *:Zone.Identifier
 vitical_private*
+.secrets

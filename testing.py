@@ -1,8 +1,11 @@
 import datetime
 import unittest
 import glob
+import os
 
 from Backend import calendar_generator
+
+TEST_CASES_DIR = os.environ.get('TEST_CASES_DIR', './Testing/Test Cases')
 
 class TestCalendarGenerator(unittest.TestCase):
 
@@ -136,7 +139,7 @@ class TestCalendarGenerator(unittest.TestCase):
         # with open("WinterSemester2023sample.ics", "wb") as file:
         #     file.write(ics)
 
-        for file in glob.glob("./Testing/Test Cases/*"):
+        for file in glob.glob(os.path.join(TEST_CASES_DIR, "*")):
             with open(file) as text_source:
                 self.assertTrue(
                     calendar_generator.generate_calendar(
