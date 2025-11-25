@@ -152,6 +152,15 @@ def provide_instructions_expander():
         
         """)
 
+def provide_privacy_policy_expander():
+    with st.expander("🔒 Privacy Policy"):
+        st.markdown("""
+1. **Data Collection**: This application does not store the timetables or any personal data entered by users. 
+2. **Data Processing**: The website is hosted on Streamlit Cloud, which does all the processing of data. 
+3. **Analytics**: Analytical data such as download counts are collected to monitor usage. Streamlit and Google Firebase are used for this purpose.
+4. **Submitted Data**: If users choose to submit their timetable data for issue reporting, it is collected via Google Forms and is only accessible to a few members of the development team for troubleshooting purposes. It may be stored privately and used for future testing too.
+        """) 
+
 def streamlit_stuff(downloads_doc_ref):
     add_custom_css()
 
@@ -183,6 +192,8 @@ def streamlit_stuff(downloads_doc_ref):
 
     provide_samples_expander()
 
+    provide_privacy_policy_expander()
+
     provide_reporting_expander()
 
 def main():
@@ -199,4 +210,5 @@ Pending Works:
 - Create a proper feedback form and link it in the reporting section
 - Merge use case descriptions from the other branch
 - Test and ask to test
+- Test if the download counters are still working
 """
