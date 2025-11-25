@@ -23,7 +23,7 @@ jobs:
 
     - name: Test with unittest
       env:
-        TEST_CASES_DIR: private_test_cases/TestCases
+        TEST_CASES_DIR: private_test_cases
       run: python testing.py 2>&1 | tee test_results.txt
 
     - name: Upload test results

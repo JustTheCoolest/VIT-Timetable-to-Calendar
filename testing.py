@@ -5,7 +5,7 @@ import os
 
 from Backend import calendar_generator
 
-TEST_CASES_DIR = os.environ.get('TEST_CASES_DIR', './Testing/Test Cases')
+TEST_CASES_DIR = os.environ.get('TEST_CASES_DIR')
 
 class TestCalendarGenerator(unittest.TestCase):
 
@@ -139,7 +139,7 @@ class TestCalendarGenerator(unittest.TestCase):
         # with open("WinterSemester2023sample.ics", "wb") as file:
         #     file.write(ics)
 
-        for file in glob.glob(os.path.join(TEST_CASES_DIR, "*")):
+        for file in glob.glob(os.path.join(TEST_CASES_DIR, "TestCases", "*")):
             with open(file) as text_source:
                 self.assertTrue(
                     calendar_generator.generate_calendar(
@@ -155,6 +155,20 @@ class TestCalendarGenerator(unittest.TestCase):
                     )
                 )
 
+        for file in glob.glob(os.path.join(TEST_CASES_DIR, "FailCases", "*")):
+            with open(file) as text_source:
+                with self.assertRaises(Exception):
+                    calendar_generator.generate_calendar(
+                        text_source.read(),
+                        [
+                            datetime.date(2023, 2, 15),
+                            datetime.date(2023, 3, 25),
+                            datetime.date(2023, 4, 3),
+                            datetime.date(2023, 5, 2),
+                            datetime.date(2023, 5, 15),
+                            datetime.date(2023, 6, 19)
+                        ]
+                    )
 
 class FlexibilityTest(unittest.TestCase):
     def test_flexibility(self):
