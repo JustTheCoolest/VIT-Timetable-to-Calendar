@@ -101,7 +101,7 @@ def provide_reporting_expander():
         st.markdown("""
         For feature requests, please open an issue on the [GitHub repository](https://github.com/JustTheCoolest/VIT-Timetable-to-Calendar). You may also submit feedback in the discussions section.
                     
-        If the calendar generation fails, you can submit your data privately using [this form](https://forms.gle/your-google-form-id) for us to review and get back to you.
+        If the calendar generation fails, you can submit your data privately using [this form](https://forms.gle/SvEHAEro9isNnorr6) for us to review and get back to you.
         """)
 
 def provide_samples_expander():
