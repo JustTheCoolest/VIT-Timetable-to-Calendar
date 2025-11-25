@@ -72,29 +72,22 @@ def provide_download(downloads_doc_ref):
 
     with col1:
         if st.button("⚡ GENERATE CALENDAR"):
-            if timetable_input.strip() == "":
-                st.components.v1.html("""
+            try:
+                ics_text=generate_calender(timetable_input)
+                st.session_state["ics_text"] = ics_text
+            except Exception as e:
+                print(traceback.format_exc())
+                st.components.v1.html(f"""
                     <script>
-                        alert("❌ ERROR: No timetable data detected. Please input your schedule data.");
+                        alert("❌ ERROR: Failed to generate calendar. The format might be incorrect. Please paste your timetable from VTOP. Refer to the video guide in the instructions section for more details. \\n\\n If the issue persists, please report it using the 'Report Issue' section.");
                     </script>
                 """, height=0)
-            else:
-                try:
-                    ics_text=generate_calender(timetable_input)
-                    st.session_state["ics_text"] = ics_text
-                except Exception as e:
-                    print(traceback.format_exc())
-                    st.components.v1.html(f"""
-                        <script>
-                            alert("❌ ERROR: Failed to generate calendar. The format might be incorrect. Please paste your timetable from VTOP. Refer to the video guide in the instructions dropdown on the website.\\n\\nError details: {str(e)}");
-                        </script>
-                    """, height=0)
 
     with col2:
         if "ics_text" in st.session_state:
             st.download_button(
                 label="📥 Download Calendar",
-                data=ics_text,
+                data=st.session_state["ics_text"],
                 file_name="calendar.ics",
                 mime="text/calendar",
                 on_click=lambda: downloads_doc_ref.update({
@@ -103,8 +96,13 @@ def provide_download(downloads_doc_ref):
                 })
             )
 
-def provide_report_option():
-    st.link_button("📝 Report Issue / Give Feedback", "https://forms.gle/your-google-form-id")
+def provide_reporting_expander():
+    with st.expander("📝 Report Issue / Give Feedback"):
+        st.markdown("""
+        For feature requests, please open an issue on the [GitHub repository](https://github.com/JustTheCoolest/VIT-Timetable-to-Calendar). You may also submit feedback in the discussions section.
+                    
+        If the calendar generation fails, you can submit your data privately using [this form](https://forms.gle/your-google-form-id) for us to review and get back to you.
+        """)
 
 def provide_samples_expander():
     valid_extensions = ('.png', '.jpg', '.jpeg', '.gif')
@@ -185,7 +183,7 @@ def streamlit_stuff(downloads_doc_ref):
 
     provide_samples_expander()
 
-    provide_report_option()
+    provide_reporting_expander()
 
 def main():
     doc_ref = get_firestore_downloads_doc_ref()
