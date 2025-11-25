@@ -132,15 +132,15 @@ def provide_samples_expander():
         st.markdown("</div>", unsafe_allow_html=True)
 
 def provide_instructions_expander():
-    with st.expander("⚡ Quick Start Guide"):
+    with st.expander("⚡ Quick Start Guide (Instructions)"):
         st.markdown("""
-        ### 📡 *Video Transmissions*
+        ### 📡 *Video Guides*
+                    
+        *📱 [iPadOS tutorial with Apple Calendar](https://youtu.be/dafPgd-1Z98)*
         
-        *🖥 [Desktop Calendar Integration](https://youtu.be/A3Rubu_3Le0?si=FA482m6ABF9n7szG)*
-        
-        *📱 [Mobile Device Setup](https://youtu.be/dafPgd-1Z98)*
+        *🖥 [Google Calendar import tutorial on desktop](https://youtu.be/gzahLrDPKv4?si=gQwRu8u0e5qLGJE9)*
 
-        ### 🚀 *Launch Sequence*
+        ### 🚀 *Text Guide*
         
         *◆ Step 1:* Navigate to your VTOP timetable and copy ALL text from "SI.No" to "L94"
         
@@ -160,7 +160,7 @@ def streamlit_stuff(downloads_doc_ref):
     <div class="cyber-header">
         <div class="cyber-nav">
             <div class="nav-brand">
-                <i class="fas fa-satellite-dish"></i> VIT CALENDAR
+                <i class="fas fa-satellite-dish"></i> VTop to Calendar
             </div>
             <div class="nav-links">
                 <a href="https://github.com/JustTheCoolest/VIT-Timetable-to-Calendar" target="_blank">
@@ -171,7 +171,7 @@ def streamlit_stuff(downloads_doc_ref):
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("<h1><i class='fas fa-rocket'></i> TIMETABLE CONVERTER</h1>", unsafe_allow_html=True)
+    st.markdown("<h1><i class='fas fa-rocket'></i> TIMETABLE EXPORTER</h1>", unsafe_allow_html=True)
     st.markdown("<div class='author-credit'>⚡ Engineered by ANDHAVARAPU BALU and HARSHA DATTA⚡</div>", unsafe_allow_html=True)
 
     provide_introduction_expander()
@@ -191,3 +191,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+"""
+Pending Works:
+- Add all YouTube video guides in the instructions section
+- Add privacy policy 
+- Create a proper feedback form and link it in the reporting section
+- Merge use case descriptions from the other branch
+- Test and ask to test
+"""
