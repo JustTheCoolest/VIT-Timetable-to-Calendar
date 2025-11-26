@@ -186,6 +186,7 @@ class FlexibilityTest(unittest.TestCase):
 class StreamlitInterfaceTest(unittest.TestCase):
     def test_round_down_util(self):
         from StreamlitFrontend.utils import round_down
+        from anything import something
 
         self.assertEqual(round_down(21), '20')
         self.assertEqual(round_down(5), '5')
