@@ -2,8 +2,6 @@ import streamlit as st
 from google.cloud import firestore
 from google.oauth2 import service_account
 
-import sigfig
-
 import datetime
 import json
 import os
@@ -11,6 +9,7 @@ import base64
 import traceback
 
 from Backend import calendar_generator
+from StreamlitFrontend.utils import *
 
 @st.cache_resource
 def get_firestore_downloads_doc_ref():
@@ -25,12 +24,12 @@ def get_firestore_downloads_doc_ref():
 
 @st.cache_data(ttl = 600) # Cache for 10 minutes
 def get_downloads_count(_downloads_doc_ref):
-    return sigfig.round(_downloads_doc_ref.get().to_dict().get('download_count'), sigfigs=1)
-
-
+    count = _downloads_doc_ref.get().to_dict().get('download_count')
+    count = round_down(count)
+    return count
 
 def add_custom_css():
-    css_path = "style.css"
+    css_path = "StreamlitFrontend/style.css"
 
     # Replace placeholder in CSS with base64 image
     with open(css_path, "r") as css_file:
@@ -54,34 +53,55 @@ Reasons to use a calendar app:
 • Home screen widgets!
 """)
 
-
-
-
-def provide_download(page_text, downloads_doc_ref):
+def generate_calender(page_text):
     start_date = (datetime.datetime.now() - datetime.timedelta(days=1)).date()
     end_date = datetime.date(2025, 5, 31)
     ics_text = calendar_generator.generate_calendar(page_text, [start_date, end_date])
+    return ics_text
 
-    st.markdown("""
-            <div class="success-alert">
-                <i class="fas fa-check-circle"></i> 
-                SUCCESS: Calendar file generated! Download initiated.
-            </div>
-            """, unsafe_allow_html=True)
+def provide_download(downloads_doc_ref):
+    ics_text=None
+    timetable_input = st.text_area(
+                        "🎯 INPUT YOUR TIMETABLE DATA:",
+                        placeholder="Paste your complete VTOP timetable here... System ready for data input.",
+                        height=200
+                    )
 
-    st.markdown('<div class="cyber-divider"></div>', unsafe_allow_html=True)
-    st.markdown("### 📡 *DOWNLOAD TRANSMISSION*")
-    st.download_button(
-        label="⬇ DOWNLOAD CALENDAR FILE",
-        data=ics_text,
-        file_name="vit_cyber_calendar.ics",
-        mime="text/calendar",
-        help="Download your generated calendar file",
-        on_click=lambda: downloads_doc_ref.update({
-            "last_downloaded": datetime.datetime.now().isoformat(),
-            "download_count": firestore.Increment(1)
-        })
-    )
+    col1, col2 = st.columns([1, 1])  
+
+    with col1:
+        if st.button("⚡ GENERATE CALENDAR"):
+            try:
+                ics_text=generate_calender(timetable_input)
+                st.session_state["ics_text"] = ics_text
+            except Exception as e:
+                print(traceback.format_exc())
+                st.components.v1.html(f"""
+                    <script>
+                        alert("❌ ERROR: Failed to generate calendar. The format might be incorrect. Please paste your timetable from VTOP. Refer to the video guide in the instructions section for more details. \\n\\n If the issue persists, please report it using the 'Report Issue' section.");
+                    </script>
+                """, height=0)
+
+    with col2:
+        if "ics_text" in st.session_state:
+            st.download_button(
+                label="📥 Download Calendar",
+                data=st.session_state["ics_text"],
+                file_name="calendar.ics",
+                mime="text/calendar",
+                on_click=lambda: downloads_doc_ref.update({
+                    "last_downloaded": datetime.datetime.now().isoformat(),
+                    "download_count": firestore.Increment(1)
+                })
+            )
+
+def provide_reporting_expander():
+    with st.expander("📝 Report Issue / Give Feedback"):
+        st.markdown("""
+        For feature requests, please open an issue on the [GitHub repository](https://github.com/JustTheCoolest/VIT-Timetable-to-Calendar). You may also submit feedback in the discussions section.
+                    
+        If the calendar generation fails, you can submit your data privately using [this form](https://forms.gle/SvEHAEro9isNnorr6) for us to review and get back to you.
+        """)
 
 def provide_samples_expander():
     valid_extensions = ('.png', '.jpg', '.jpeg', '.gif')
@@ -104,22 +124,23 @@ def provide_samples_expander():
                 for ext in valid_extensions:
                     caption = caption.replace(ext, '')
                 caption = caption.strip().title()
-                st.image(f"{folder}/{sample}", caption=f"{i+1}. {caption}")
+                st.markdown(f"**{caption}**")
+                st.image(f"{folder}/{sample}")
             except Exception as e:
                 st.error(f"Error loading image {sample}: {str(e)}")
 
         st.markdown("</div>", unsafe_allow_html=True)
 
 def provide_instructions_expander():
-    with st.expander("⚡ Quick Start Guide"):
+    with st.expander("⚡ Quick Start Guide (Instructions)"):
         st.markdown("""
-        ### 📡 *Video Transmissions*
+        ### 📡 *Video Guides*
+                    
+        *📱 [iPadOS tutorial with Apple Calendar](https://youtu.be/dafPgd-1Z98)*
         
-        *🖥 [Desktop Calendar Integration](https://youtu.be/A3Rubu_3Le0?si=FA482m6ABF9n7szG)*
-        
-        *📱 [Mobile Device Setup](https://youtu.be/dafPgd-1Z98)*
+        *🖥 [Google Calendar import tutorial on desktop](https://youtu.be/gzahLrDPKv4?si=gQwRu8u0e5qLGJE9)*
 
-        ### 🚀 *Launch Sequence*
+        ### 🚀 *Text Guide*
         
         *◆ Step 1:* Navigate to your VTOP timetable and copy ALL text from "SI.No" to "L94"
         
@@ -131,7 +152,14 @@ def provide_instructions_expander():
         
         """)
 
-
+def provide_privacy_policy_expander():
+    with st.expander("🔒 Privacy Policy"):
+        st.markdown("""
+1. **Data Collection**: This application does not store the timetables or any personal data entered by users. 
+2. **Data Processing**: The website is hosted on Streamlit Cloud, which does all the processing of data. 
+3. **Analytics**: Analytical data such as download counts are collected to monitor usage. Streamlit and Google Firebase are used for this purpose.
+4. **Submitted Data**: If users choose to submit their timetable data for issue reporting, it is collected via Google Forms and is only accessible to a few members of the development team for troubleshooting purposes. It may be stored privately and used for future testing too.
+        """) 
 
 def streamlit_stuff(downloads_doc_ref):
     add_custom_css()
@@ -141,7 +169,7 @@ def streamlit_stuff(downloads_doc_ref):
     <div class="cyber-header">
         <div class="cyber-nav">
             <div class="nav-brand">
-                <i class="fas fa-satellite-dish"></i> VIT CALENDAR
+                <i class="fas fa-satellite-dish"></i> VTop to Calendar
             </div>
             <div class="nav-links">
                 <a href="https://github.com/JustTheCoolest/VIT-Timetable-to-Calendar" target="_blank">
@@ -152,64 +180,21 @@ def streamlit_stuff(downloads_doc_ref):
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("<h1><i class='fas fa-rocket'></i> TIMETABLE CONVERTER</h1>", unsafe_allow_html=True)
-    st.markdown("<div class='author-credit'>⚡ Engineered by ANDHANARAPU BALU and HARSHA DATTA⚡</div>", unsafe_allow_html=True)
+    st.markdown("<h1><i class='fas fa-rocket'></i> TIMETABLE EXPORTER</h1>", unsafe_allow_html=True)
+    st.markdown("<div class='author-credit'>⚡ Engineered by ANDHAVARAPU BALU and HARSHA DATTA⚡</div>", unsafe_allow_html=True)
 
     provide_introduction_expander()
     provide_instructions_expander()
-
-    timetable_input = st.text_area(
-        "🎯 INPUT YOUR TIMETABLE DATA:",
-        placeholder="Paste your complete VTOP timetable here... System ready for data input.",
-        height=200
-    )
-
-    col1, col2 = st.columns([1, 1])  
-
-    with col1:
-        if st.button("⚡ GENERATE CALENDAR"):
-            if timetable_input.strip() == "":
-                st.components.v1.html("""
-                    <script>
-                        alert("❌ ERROR: No timetable data detected. Please input your schedule data.");
-                    </script>
-                """, height=0)
-            else:
-                try:
-                    start_date = datetime.datetime.now().date()
-                    end_date = datetime.date(2025, 5, 31)
-                    ics_text = calendar_generator.generate_calendar(timetable_input, [start_date, end_date])
-                    st.session_state["ics_text"] = ics_text
-                    st.session_state["calendar_error"] = False  
-                except Exception as e:
-                    print(traceback.format_exc())
-                    st.session_state["calendar_error"] = True  
-
-                    st.components.v1.html(f"""
-                        <script>
-                            alert("❌ ERROR: Failed to generate calendar. The format might be incorrect. Please paste your timetable from VTOP. Refer to the video guide in the instructions dropdown on the website.\\n\\nError details: {str(e)}");
-                        </script>
-                    """, height=0)
-
-                if st.session_state.get("calendar_error", False):
-                    st.markdown("### 💬 Help us improve!")
-                    st.markdown("If you're consistently facing issues, please report the error so we can assist:")
-                    st.link_button("📝 Report Issue", "https://forms.gle/your-google-form-id")
-
-    with col2:
-        if "ics_text" in st.session_state:
-            st.download_button(
-                label="📥 Download Calendar",
-                data=st.session_state["ics_text"],
-                file_name="calendar.ics",
-                mime="text/calendar"
-            )
+    provide_download(downloads_doc_ref)
 
     count_to_display = get_downloads_count(downloads_doc_ref)
     st.subheader(f"{count_to_display}+ downloads so far!")
 
     provide_samples_expander()
 
+    provide_privacy_policy_expander()
+
+    provide_reporting_expander()
 
 def main():
     doc_ref = get_firestore_downloads_doc_ref()

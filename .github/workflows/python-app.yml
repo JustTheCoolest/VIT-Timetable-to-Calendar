@@ -1,0 +1,27 @@
+name: Python application
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Checkout private test cases
+      uses: actions/checkout@v3
+      with:
+        repository: JustTheCoolest/TestCases-VIT-Timetable-to-Calendar
+        token: ${{ secrets.TEST_CASES_REPO_TOKEN }}
+        path: private_test_cases
+
+    - uses: actions/setup-python@v3
+
+    - run: python3 -m venv .venv && source .venv/bin/activate
+
+    - run:  pip install -r requirements_for_backend_alone.txt
+
+    - name: Test with unittest
+      env:
+        TEST_CASES_DIR: private_test_cases
+      run: python testing.py 

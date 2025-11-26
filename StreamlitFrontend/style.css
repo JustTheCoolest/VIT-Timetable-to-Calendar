@@ -84,15 +84,15 @@ html, body, .stApp {
 }
 
 .cyber-container {
-    width: calc(100% - 4rem);
+    width: calc(100% - 1rem);
     max-width: 1200px;
-    min-height: calc(100vh - 8rem);
+    min-height: calc(100vh - 2rem);
     background: linear-gradient(145deg, rgba(15, 15, 35, 0.95), rgba(25, 25, 45, 0.9));
     border: 2px solid;
     border-image: var(--primary-gradient) 1;
-    border-radius: 20px;
+    border-radius: 12px;
     padding: 0;
-    margin: 2rem auto;
+    margin: 0.5rem auto;
     box-shadow: 
         0 25px 80px rgba(0, 0, 0, 0.4),
         0 0 0 1px rgba(102, 126, 234, 0.2),
@@ -146,8 +146,8 @@ html, body, .stApp {
 .cyber-header {
     background: linear-gradient(135deg, rgba(15, 15, 35, 0.98), rgba(25, 25, 50, 0.95));
     border-bottom: 2px solid rgba(102, 126, 234, 0.3);
-    border-radius: 20px 20px 0 0;
-    padding: 25px 40px;
+    border-radius: 12px 12px 0 0;
+    padding: 15px 20px;
     position: relative;
     z-index: 10;
 }
@@ -212,7 +212,7 @@ html, body, .stApp {
 .main .block-container {
     background: transparent;
     border: none;
-    padding: 3rem 3rem 2rem 3rem;
+    padding: 1.5rem 1rem;
     max-width: none;
     margin: 0;
     width: 100%;
@@ -223,9 +223,9 @@ html, body, .stApp {
 h1 {
     font-family: 'Orbitron', monospace;
     text-align: center;
-    font-size: 3.2rem;
+    font-size: 2rem;
     font-weight: 900;
-    margin: 2rem 0 1rem;
+    margin: 1rem 0 0.5rem;
     background: var(--secondary-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -287,7 +287,7 @@ h1::after {
     border-radius: 15px;
     font-size: 1rem;
     font-weight: 400;
-    padding: 1.2rem;
+    padding: 0.8rem;
     font-family: 'Rajdhani', sans-serif;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 
@@ -308,7 +308,7 @@ h1::after {
     background: var(--primary-gradient);
     color: white;
     border-radius: 25px;
-    padding: 1rem 2.5rem;
+    padding: 0.8rem 1.5rem;
     font-weight: 700;
     font-size: 1.1rem;
     font-family: 'Rajdhani', sans-serif;
@@ -350,7 +350,7 @@ h1::after {
     background: var(--success-gradient);
     color: white;
     font-weight: 700;
-    padding: 1rem 2.5rem;
+    padding: 0.8rem 1.5rem;
     font-size: 1.1rem;
     font-family: 'Rajdhani', sans-serif;
     border-radius: 25px;
@@ -392,7 +392,7 @@ h1::after {
     background: linear-gradient(145deg, rgba(25, 25, 45, 0.8), rgba(35, 35, 55, 0.7));
     border: 1px solid rgba(79, 172, 254, 0.2);
     border-radius: 15px;
-    margin: 1.5rem 0;
+    margin: 0.5rem 0;
     overflow: hidden;
     position: relative;
 }
@@ -411,9 +411,9 @@ h1::after {
     background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(102, 126, 234, 0.1));
     color: white;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-family: 'Rajdhani', sans-serif;
-    padding: 1.2rem 1.8rem;
+    padding: 0.8rem 1rem;
     transition: all 0.3s ease;
     border-left: 4px solid transparent;
 }
