@@ -4,6 +4,7 @@ import glob
 import os
 
 from Backend import calendar_generator
+from StreamlitFrontend.utils import round_down
 
 TEST_CASES_DIR = os.environ.get('TEST_CASES_DIR')
 
@@ -182,6 +183,15 @@ class FlexibilityTest(unittest.TestCase):
         #     ))
         pass
 
+class StreamlitInterfaceTest(unittest.TestCase):
+    def test_round_down_util(self):
+        from StreamlitFrontend.utils import round_down
+
+        self.assertEqual(round_down(21), '20')
+        self.assertEqual(round_down(5), '5')
+        self.assertEqual(round_down(121), '100')
+        self.assertEqual(round_down(199), '100')
+        self.assertEqual(round_down(999), '900')
 
 if __name__ == '__main__':
     unittest.main()

@@ -2,8 +2,6 @@ import streamlit as st
 from google.cloud import firestore
 from google.oauth2 import service_account
 
-import sigfig
-
 import datetime
 import json
 import os
@@ -11,6 +9,7 @@ import base64
 import traceback
 
 from Backend import calendar_generator
+from StreamlitFrontend.utils import *
 
 @st.cache_resource
 def get_firestore_downloads_doc_ref():
@@ -25,12 +24,12 @@ def get_firestore_downloads_doc_ref():
 
 @st.cache_data(ttl = 600) # Cache for 10 minutes
 def get_downloads_count(_downloads_doc_ref):
-    return sigfig.round(_downloads_doc_ref.get().to_dict().get('download_count'), sigfigs=1)
-
-
+    count = _downloads_doc_ref.get().to_dict().get('download_count')
+    count = round_down(count)
+    return count
 
 def add_custom_css():
-    css_path = "style.css"
+    css_path = "StreamlitFrontend/style.css"
 
     # Replace placeholder in CSS with base64 image
     with open(css_path, "r") as css_file:
@@ -203,13 +202,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-"""
-Pending Works:
-- Add all YouTube video guides in the instructions section
-- Add privacy policy 
-- Create a proper feedback form and link it in the reporting section
-- Merge use case descriptions from the other branch
-- Test and ask to test
-- Test if the download counters are still working
-"""
