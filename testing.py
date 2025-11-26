@@ -194,4 +194,5 @@ class StreamlitInterfaceTest(unittest.TestCase):
         self.assertEqual(round_down(999), '900')
 
 if __name__ == '__main__':
-    unittest.main()
+    result = unittest.main(exit=False)
+    exit(0 if result.result.wasSuccessful() else 1)
