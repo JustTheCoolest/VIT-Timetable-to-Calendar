@@ -38,7 +38,7 @@ def transform_arrear_courses(data: list[str], start_index: int) -> list[str]:
 def get_courses_dict(start_index, data):
     courses = {}
     for line_index in range(start_index, len(data), RECORD_SIZE):
-        slot = data[line_index + 7]
+        slot = data[line_index + 8]
         header = (data[line_index + 2].split(' - '))
         course_code = header[0]
         courses[course_code] = {
@@ -76,7 +76,7 @@ def get_slot_times(start_times: list[str], end_times: list[str]) -> list[(dateti
         # Bug - [12am, 1am) would be evaluated as pm
         previous_time = datetime.time(0)
         for index, time in enumerate(times):
-            if time == "Lunch":
+            if time.strip() == "Lunch":
                 continue
             if time == "-":
                 times[index] = "-"
